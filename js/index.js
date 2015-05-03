@@ -7,8 +7,10 @@ $(window).resize(function() {
 });
 
 function initPageCss() {
-	console.log("page-size ",window.innerHeight);
-	$("[data-role=content]").css("height", window.innerHeight+ "px");
+	$("[data-role=content]").css("height", window.innerHeight-125 + "px");
+	var imageWidth = $('.contentImg').width();
+	$('.contentImg').css('height', imageWidth+"px");
+	
 }
 
 $(window).on('hashchange', function(e) {
