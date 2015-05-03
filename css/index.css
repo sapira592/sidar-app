@@ -153,13 +153,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CCFF', end
   position: relative;
   display: inline-block;
   height: 100px;
-  width: 100%;
+  width: 99%;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');
      background-size: contain;
   /* background-size: 100% 100%; */
-  background-position: calc(100% - 10px) center ;
+  /*background-position-x: calc(100% - 10px);*/
+  background-position-y: center ;
   background-repeat: no-repeat;
   border: 1px solid black;
+overflow:visible;
   margin: 2px 0 2px 0px;
 }
 .contentImg img{
@@ -178,9 +180,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CCFF', end
 	margin: 0;
 	height: 100%;
 	
-	/*background-image: url('../img/background.jpg');*/
+	/*background-image: url('../img/background.jpg');
 	background-size: 100% 100%;
-	background-repeat: repeat;
+	background-repeat: repeat;*/
 	font-family: Arial;
 	direction: rtl;
 	overflow-y: auto;
