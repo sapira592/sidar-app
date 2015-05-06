@@ -151,17 +151,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99CCFF', end
 
 .contentImg{
   display: inline-block;
-  height: 100px;
-  width: 97%;
+  height: auto;
+  width: 100%;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');
-     background-size: contain;
-  /* background-size: 100% 100%; */
+  background-size: contain;
+ background-size: 100% 100%;
   background-position-x:  center;/*calc(100% - 10px),*/
   background-position-y: center ;
   background-repeat: no-repeat;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin: 2px 0 2px 0px;
 }
+
 .contentImg img{
 	margin:0;
 	width:100%;
