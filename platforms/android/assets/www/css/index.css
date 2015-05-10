@@ -1,115 +1,201 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	text-shadow: none;
+	color: black;
+	text-transform: none;
+	overflow-y: hidden;
+}
+body{
+	overflow-y: hidden;
+	direction: rtl;
 }
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-user-select: none;
+	user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	background: transparent;
+	
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+/* header */
+[data-role=header] {
+	height: 149px;
+	width: 100%;
+	margin:auto;
+	text-align: center;
+	text-shadow: none;
+	background-color: white !important;
+	border-color: white !important;
+
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+
+header div {
+	display: inline-block;
+
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+
+header .container {
+	height: 40px;
+	width: 100%;
+
+	position: relative;
+	display:inline-block;
+	text-align:center;
+	text-shadow: none;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+
+.logo, .back{
+	height: 40px;
+	display: inline;
+	position: relative;
+}
+.container .logo{
+	float: right;
+	width: 90%;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+.logo .hebrew{
+	font-size:18px;
+	position: relative;
+	/*top:9px;*/
+	line-height:37px;
+	padding-right: 7.9px;
+	
+}
+header .back{
+	width: 9%;
+	float: left;
+	line-height:39px;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+header .shenkar_logo {
+	height: auto;
+	float:right;
+	width: 22px;
+	position:relative;
+	top:10px;
+	text-shadow: none;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+header .sidar_logo {
+	height: 10px;
+	width: 100%;
+	position: relative;
+	top:-13px;
+	/*float: right;*/
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+
+/* אחוזים-בהתאם למסך.  פיקסל-נשאר קבוע.*/
+header .navigation {
+	top:-9px;
+	position:relative; 	
+	width:100%;
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 10px; /* Firefox */
+	column-gap: 10px;
+	
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+.content {
+	-webkit-column-count: 4; /* Chrome, Safari, Opera */
+	-moz-column-count: 4; /* Firefox */
+	column-count: 4;
+	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 10px; /* Firefox */
+	column-gap: 10px;
+
+	width:100%;
+	position: :relative;
+	display:inline-block;
+}
+
+
+.nav{
+	width:100%;
+	position: :relative;
+	display:inline-block;
+	height:22px;
+	margin:2px 0 2px 0;
+	font-size:13px;
+	line-height: 180%;
+	text-shadow: none;
+	color:black !important;
+}
+.navColor{
+	background:#D0D0D0 
+/*background: #fcfff4; /* Old browsers */
+/*background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead)); /* Chrome,Safari4+ */
+/*background: -webkit-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10+,Safari5.1+ */
+/*background: -o-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Opera 11.10+ */
+/*background: -ms-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* IE10+ */
+/*background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+
+}
+.ui-link{
+	color:black !important;
+}
+
+
+
+.contentImg{
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
+  background-size: calc(100% - 15px) calc(100% - 15px);
+  background-size: cover;
+  background-position:center center;
+  background-repeat: no-repeat;
+  border: 1px solid red;
+  border-left-style:1px solid black;
+  margin: 2px 0 2px 0px;
+  /*border-left:1px solid black;*/
+}
+
+
+.contentImg img{
+	margin:0;
+	width:100%;
+	height: auto;
+	
+}
+
+
+/* content css */
+#content {
+	/*top:13px;*/
+	position: relative;
+	padding: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: 0;
+	height: 100%;
+	text-align: center;
+	/*background-image: url('../img/background.jpg');
+	background-size: 100% 100%;
+	background-repeat: repeat;*/
+	font-family: Arial;
+	direction: rtl;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#content::-webkit-scrollbar { 
+    display: none; 
 }

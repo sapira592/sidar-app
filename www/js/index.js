@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	initPageCss();
+	updateMainScreen();
 });
 
 $(window).resize(function() {
@@ -20,9 +21,18 @@ $(window).on('hashchange', function(e) {
 
 });
 
-$(document).on("click", '[data-role=footer]', function(e) {
 
-});
+function updateMainScreen() {
+	$.getJSON("json/images.json", function(data) {
+		$.each(data, function(key, val) {
+			var contentImg= $("<div>").addClass("contentImg").css("backgroundImage","url('"+val.url+"')");
+			$(".content").append(contentImg);
+		});
+		initPageCss();
+	});
+}
+
+
 
 
 
