@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 149px;
+	height: 160px;
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -117,7 +117,7 @@ header .navigation {
 	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
 	-moz-column-gap: 10px; /* Firefox */
 	column-gap: 10px;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
 	width:100%;
 	display:inline-block;
 }
