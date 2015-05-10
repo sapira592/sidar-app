@@ -117,15 +117,14 @@ header .navigation {
 	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
 	-moz-column-gap: 10px; /* Firefox */
 	column-gap: 10px;
-
+  margin-top: 5px;
 	width:100%;
-	position: :relative;
 	display:inline-block;
 }
 
 
 .nav{
-	width:100%;
+	width:99%;
 	position: :relative;
 	display:inline-block;
 	height:22px;
@@ -136,7 +135,8 @@ header .navigation {
 	color:black !important;
 }
 .navColor{
-	background:#D0D0D0 
+background:none; 
+border: 1px solid #D0D0D0;
 /*background: #fcfff4; /* Old browsers */
 /*background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6+ */
 /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead)); /* Chrome,Safari4+ */
@@ -156,7 +156,7 @@ header .navigation {
 .contentImg{
   display: inline-block;
   height: auto;
-  width: 100%;
+  width: 98%;
   /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
   background-size: calc(100% - 15px) calc(100% - 15px);
   background-size: cover;
