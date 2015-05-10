@@ -9,8 +9,8 @@ $(window).resize(function() {
 function initPageCss() {
 	$("[data-role=content]").css("height", window.innerHeight-125 + "px");
 	var imageWidth = $('.contentImg').width();
+	var imageHeight = $('.contentImg').height();
 	$('.contentImg').css('height', imageWidth+"px");
-	//$('.contentImg').css('width', (window.innerWidth-36)/4+"px");
 	$('[data-role=header]').css('width', window.innerWidth-30 + "px");
 	
 }

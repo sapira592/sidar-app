@@ -67,7 +67,7 @@ header .container {
 }
 
 .logo .hebrew{
-	font-size:19px;
+	font-size:18px;
 	position: relative;
 	/*top:9px;*/
 	line-height:37px;
@@ -132,6 +132,7 @@ header .navigation {
 	margin:2px 0 2px 0;
 	font-size:14px;
 	text-shadow: none;
+	color:black !important;
 }
 .navColor{
 background: #fcfff4; /* Old browsers */
@@ -142,7 +143,7 @@ background: -o-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Op
 background: -ms-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
-color:black;
+
 }
 .ui-link{
 	color:black !important;
@@ -153,12 +154,11 @@ color:black;
 .contentImg{
   display: inline-block;
   height: auto;
-  width: 97%;
+  width: 100%;
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');
-  background-size: contain;
-  background-size: auto;
-  /*background-position-x:  center;calc(100% - 10px),
-  background-position-y: center ;*/
+  /*background-size: calc(100% - 15px) calc(100% - 15px);*/
+  background-size: cover;
+  background-position:center center;
   background-repeat: no-repeat;
   border: 1px solid black;
   border-left-style:1px solid black;
