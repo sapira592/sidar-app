@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 163px;
+	height: 168px;
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -117,9 +117,9 @@ header .navigation {
 	position: :relative;
 	display:inline-block;
 	height:24px;
-	margin:2px 0 2px 0;
+	margin:4px 0 5px 0;
 	font-size:13px;
-	line-height: 180%;
+	line-height: 25px;
 	text-shadow: none;
 	color:black !important;
 	border: 1px solid #D0D0D0;
@@ -170,7 +170,7 @@ header .navigation {
   background-repeat: no-repeat;
   border: 1px solid red;
   border-left-style:1px solid black;
-  margin: 2px 0 2px 0px;
+  margin: 2px 0 7px 0px;
   /*border-left:1px solid black;*/
 }
 

@@ -9,9 +9,8 @@ $(window).resize(function() {
 });
 
 function initPageCss() {
-	$("[data-role=content]").css("height", window.innerHeight-parseInt($('header').css('height')) + "px");
+	$("[data-role=content]").css("height", window.innerHeight-$('header').height() + "px");
 	var imageWidth = $('.contentImg').width();
-	var imageHeight = $('.contentImg').height();
 	$('.contentImg').css('height', imageWidth+"px");
 	$('[data-role=header]').css('width', window.innerWidth-30 + "px");
 	
