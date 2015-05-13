@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$.mobile.defaultPageTransition="none";
 	initPageCss();
 	updateMainScreen();
 });
@@ -8,7 +9,7 @@ $(window).resize(function() {
 });
 
 function initPageCss() {
-	$("[data-role=content]").css("height", window.innerHeight-125 + "px");
+	$("[data-role=content]").css("height", window.innerHeight-parseInt($('header').css('height')) + "px");
 	var imageWidth = $('.contentImg').width();
 	var imageHeight = $('.contentImg').height();
 	$('.contentImg').css('height', imageWidth+"px");
@@ -32,7 +33,28 @@ function updateMainScreen() {
 	});
 }
 
+function aboutUs(){
+	
+	$('#aboutPage .content').css("display","none");
+	$('#aboutPage #content article').remove();
+	var article=$('<article>').addClass('textBox');
+	
+/*val- the current object
+  key-index*/
+ 
+ 
+	$.getJSON("json/aboutUs.json", function(data) {
+		$.each(data, function(key, val) {
+			var shenkar = $('<p>').addClass("textBox_title").html(val.title);
+			var shenkar_content = $('<p>').addClass("textBox_content").html(val.content);
+			article.append(shenkar).append(shenkar_content);
+		});
 
+	}); 
+	
+	
+	$('#aboutPage #content').append(article)
+}
 
 
 

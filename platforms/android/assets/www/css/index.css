@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 160px;
+	height: 163px;
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -70,7 +70,7 @@ header .container {
 	font-size:18px;
 	position: relative;
 	/*top:9px;*/
-	line-height:37px;
+	line-height:38px;
 	padding-right: 7.9px;
 	
 }
@@ -110,76 +110,34 @@ header .navigation {
 	column-gap: 10px;
 	
 }
-.content {
-	-webkit-column-count: 4; /* Chrome, Safari, Opera */
-	-moz-column-count: 4; /* Firefox */
-	column-count: 4;
-	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-	-moz-column-gap: 10px; /* Firefox */
-	column-gap: 10px;
-  /*margin-top: 5px;*/
-	width:100%;
-	display:inline-block;
-}
 
 
 .nav{
 	width:99%;
 	position: :relative;
 	display:inline-block;
-	height:22px;
+	height:24px;
 	margin:2px 0 2px 0;
 	font-size:13px;
 	line-height: 180%;
 	text-shadow: none;
 	color:black !important;
+	border: 1px solid #D0D0D0;
 }
-.navColor{
-background:none; 
-border: 1px solid #D0D0D0;
-/*background: #fcfff4; /* Old browsers */
-/*background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6+ */
-/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead)); /* Chrome,Safari4+ */
-/*background: -webkit-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10+,Safari5.1+ */
-/*background: -o-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Opera 11.10+ */
-/*background: -ms-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* IE10+ */
-/*background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C */
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
 
+.nav:active , .nav:focus{
+	background-color: #D0D0D0;
 }
+
 .ui-link{
 	color:black !important;
 }
 
 
 
-.contentImg{
-  display: inline-block;
-  height: auto;
-  width: 98%;
-  /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
-  background-size: calc(100% - 15px) calc(100% - 15px);
-  background-size: cover;
-  background-position:center center;
-  background-repeat: no-repeat;
-  border: 1px solid red;
-  border-left-style:1px solid black;
-  margin: 2px 0 2px 0px;
-  /*border-left:1px solid black;*/
-}
-
-
-.contentImg img{
-	margin:0;
-	width:100%;
-	height: auto;
-	
-}
-
-
 /* content css */
 #content {
-	/*top:13px;*/
+	top:-1px;
 	position: relative;
 	padding: 0;
 	padding-right: 15px;
@@ -198,4 +156,70 @@ border: 1px solid #D0D0D0;
 
 #content::-webkit-scrollbar { 
     display: none; 
+}
+
+
+.contentImg{
+  display: inline-block;
+  height: auto;
+  width: 98%;
+  /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
+  background-size: calc(100% - 15px) calc(100% - 15px);
+  background-size: cover;
+  background-position:center center;
+  background-repeat: no-repeat;
+  border: 1px solid red;
+  border-left-style:1px solid black;
+  margin: 2px 0 2px 0px;
+  /*border-left:1px solid black;*/
+}
+
+.content {
+	
+}
+
+
+.four_columns {
+	-webkit-column-count: 4; /* Chrome, Safari, Opera */
+	-moz-column-count: 4; /* Firefox */
+	column-count: 4;
+	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 10px; /* Firefox */
+	column-gap: 10px;
+}
+
+.two_columns {
+	-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 10px; /* Firefox */
+	column-gap: 10px;
+}
+
+.one_columns {
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+	-moz-column-count: 1; /* Firefox */
+	column-count: 1;
+	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 10px; /* Firefox */
+	column-gap: 10px;
+}
+
+.textBox{
+      text-align: right;
+  background-color: #E3E3E3;
+  height: auto;
+  line-height: 20px;
+}
+
+.textBox_title{
+	font-size:15px;
+	font-weight: bold;
+	
+}
+
+.textBox_content{
+	font-size:15px;
+	margin-bottom: 15px;
 }
