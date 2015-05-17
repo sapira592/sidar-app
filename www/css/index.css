@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 166px;
+	height: 173px;
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -56,50 +56,53 @@ header .container {
 }
 
 
-.logo, .back{
+.title, .back, .shenkar_logo{
 	height: 40px;
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
-.container .logo{
+
+.title{
 	float: right;
-	width: 90%;
+	width: 95%;
+	
 }
 
-.logo .hebrew{
+.hebrew{
 	font-size:18px;
 	position: relative;
 	/*top:9px;*/
 	line-height:38px;
-	padding-right: 7.9px;
-	
-}
-header .back{
-	width: 9%;
-	float: left;
-	line-height:36px;
 }
 
-header .shenkar_logo {
+.back{
+	width:5%;
+	float: left;
+	line-height:39px;
+	text-align: left;
+}
+
+.shenkar_logo {
 	height: auto;
 	float:right;
-	width: 22px;
-	position:relative;
+	/*width:22px;*/
+	width:22px;
+	/*max-width:22px;*/
 	top:10px;
 	text-shadow: none;
 }
 
-header .sidar_logo {
+.sidar_logo {
 	height: 10px;
 	width: 100%;
 	position: relative;
-	top:-13px;
+	top:-10px;
 	/*float: right;*/
 }
 
 /* אחוזים-בהתאם למסך.  פיקסל-נשאר קבוע.*/
 header .navigation {
-	top:-9px;
+	top:-6px;
 	position:relative; 	
 	width:100%;
 	-webkit-column-count: 2; /* Chrome, Safari, Opera */
@@ -117,7 +120,7 @@ header .navigation {
 	position: :relative;
 	display:inline-block;
 	height:24px;
-	margin:4px 0 4px 0;
+	margin:4px 0 6px 0;
 	font-size:13px;
 	line-height: 25px;
 	text-shadow: none;
@@ -208,7 +211,7 @@ header .navigation {
 
 .textBox{
       text-align: right;
-  background-color: #EAEAEA;;
+  background-color:#F0F0F0;
   height: auto;
   line-height: 20px;
 }
