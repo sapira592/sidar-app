@@ -14,7 +14,7 @@ body{
 }
 
 html {
-	margin: 0;
+	margin: 0px;
 	padding: 0;
 	width: 100%;
 	height: 100%;
@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 166px;
+	height: 167px;
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -38,6 +38,9 @@ html {
 
 }
 
+.ui-header-fixed{
+	padding:0px;
+}
 
 header div {
 	display: inline-block;
@@ -56,68 +59,71 @@ header .container {
 }
 
 
-.logo, .back{
+.title, .back, .shenkar_logo{
 	height: 40px;
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
-.container .logo{
+
+.title{
 	float: right;
-	width: 90%;
+	width: 95%;
+	
 }
 
-.logo .hebrew{
+.hebrew{
 	font-size:18px;
 	position: relative;
 	/*top:9px;*/
 	line-height:38px;
-	padding-right: 7.9px;
-	
-}
-header .back{
-	width: 9%;
-	float: left;
-	line-height:36px;
 }
 
-header .shenkar_logo {
+.back{
+	width:5%;
+	float: left;
+	line-height:39px;
+	text-align: left;
+}
+
+.shenkar_logo {
 	height: auto;
 	float:right;
-	width: 22px;
-	position:relative;
+	/*width:22px;*/
+	width:22px;
+	/*max-width:22px;*/
 	top:10px;
 	text-shadow: none;
 }
 
-header .sidar_logo {
+.sidar_logo {
 	height: 10px;
 	width: 100%;
 	position: relative;
-	top:-13px;
+	top:-10px;
 	/*float: right;*/
 }
 
 /* אחוזים-בהתאם למסך.  פיקסל-נשאר קבוע.*/
 header .navigation {
-	top:-9px;
+	top:-8px;
 	position:relative; 	
 	width:100%;
 	-webkit-column-count: 2; /* Chrome, Safari, Opera */
 	-moz-column-count: 2; /* Firefox */
 	column-count: 2;
-	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
-	-moz-column-gap: 10px; /* Firefox */
-	column-gap: 10px;
+	-webkit-column-gap: 8px; /* Chrome, Safari, Opera */
+	-moz-column-gap: 8px; /* Firefox */
+	column-gap: 8px;
 	
 }
 
 
 .nav{
-	width:99%;
+	width:98%;
 	position: :relative;
 	display:inline-block;
 	height:24px;
-	margin:4px 0 4px 0;
+	margin:7px 0 0 0;
 	font-size:13px;
 	line-height: 25px;
 	text-shadow: none;
@@ -126,7 +132,7 @@ header .navigation {
 }
 
 .nav:active , .nav:focus{
-	background-color: #D0D0D0;
+	background-color: #E0E0E0 ;
 }
 
 .ui-link{
@@ -161,8 +167,8 @@ header .navigation {
 
 .contentImg{
   display: inline-block;
-  height: auto;
-  width: 98%;
+  height: 100%;
+  width: 97%;
   /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
   background-size: calc(100% - 15px) calc(100% - 15px);
   background-size: cover;
@@ -175,7 +181,7 @@ header .navigation {
 }
 
 .content {
-	
+	border-collapse: collapse;
 }
 
 
@@ -208,18 +214,18 @@ header .navigation {
 
 .textBox{
       text-align: right;
-  background-color: #EAEAEA;;
+  background-color:#F0F0F0;
   height: auto;
   line-height: 20px;
 }
 
 .textBox_title{
-	font-size:15px;
+	font-size:13px;
 	font-weight: bold;
 	
 }
 
 .textBox_content{
-	font-size:15px;
+	font-size:13px;
 	margin-bottom: 15px;
 }
