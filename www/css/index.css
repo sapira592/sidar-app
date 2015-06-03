@@ -226,6 +226,11 @@ header .navigation {
 }
 
 .textBox_content{
+	text-align:justify;
 	font-size:13px;
 	margin-bottom: 15px;
+}
+
+.list {
+	list-style-type: circle;
 }

@@ -52,7 +52,27 @@ function aboutUs(){
 	}); 
 	
 	
-	$('#aboutPage #content').append(article)
+	$('#aboutPage #content').append(article);
+}
+
+
+
+function goals(){
+	
+	$('#aboutPage .content').css("display", "none");
+	$('#aboutPage #content article').remove();
+	var article = $('<article>').addClass('textBox');
+
+	var shenkar_content = $('<ul>').addClass("textBox_content").css('list-style-type','circle');
+	$.getJSON("json/goals.json", function(data) {
+		$.each(data, function(key, val) {
+			var li = $('<li>').html(val.content);
+			shenkar_content.append(li);
+		});
+		article.append(shenkar_content);
+	}); 
+ 	$('#aboutPage #content').append(article);
+
 }
 
 
