@@ -2,15 +2,14 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	list-style-type: none;
 	text-shadow: none;
 	color: black;
 	text-transform: none;
-	overflow-y: hidden;
 }
 body{
 	overflow-y: hidden;
 	direction: rtl;
+	list-style-type: none;
 }
 
 html {
@@ -23,7 +22,8 @@ html {
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
 	background: transparent;
-	
+	overflow-y: hidden;
+	list-style-type: none;
 }
 
 /* header */
@@ -226,6 +226,14 @@ header .navigation {
 }
 
 .textBox_content{
+	text-align:justify;
 	font-size:13px;
 	margin-bottom: 15px;
+}
+
+.list {
+	text-align:justify;
+	list-style:circle !important;
+	list-style-type:circle !important;
+	  margin-right: 22px;
 }
