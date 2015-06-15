@@ -1,4 +1,23 @@
 g_data = {};
+g_currWork='';
+g_categories={
+	F:{
+		color:"red",
+		name:"אופנה"
+	},
+	G:{
+		color:"blue",
+		name:"גרפיקה"
+	},
+	I:{
+		color:"yellow",
+		name:"תעשייתי"
+	},
+	J:{
+		color:"black",
+		name:"תכשיטים"
+	}
+};
 
 $(document).ready(function() {
 	$.mobile.defaultPageTransition="none";
@@ -12,10 +31,12 @@ $(window).resize(function() {
 });
 
 function initPageCss() {
-	$("[data-role=content]").css("height", window.innerHeight-$('header').height() + "px");
-	var imageWidth = $('.contentImg').width();
-	$('.contentImg').css('height', imageWidth+"px");
 	$('[data-role=header]').css('width', window.innerWidth-30 + "px");
+	$('[data-role=header]').css('height', $('.container').height()+$('.navigation').height()+24 + "px");
+	$("[data-role=content]").css("height", window.innerHeight-$('[data-role=header]').height() + "px");
+	
+	//$('#workPage [data-role=header]').css('height', $('#workPage .container').height()+$('#workPage .navigation').height()+24 + "px");
+	//$("#workPage [data-role=content]").css("height", window.innerHeight-$('#workPage [data-role=header]').height() + "px");
 	
 }
 
@@ -28,16 +49,25 @@ $(window).on('hashchange', function(e) {
 function updateMainScreen() {
 	$.getJSON("json/images.json", function(data) {
 		$.each(data, function(key, val) {
-			var contentImg= $("<div>").addClass("contentImg").css("backgroundImage","url('"+val.url+"')").attr('data-id',key);
+			var contentImg= $("<div>").addClass("contentImg")
+			.css({"backgroundImage":"url('"+val.url+"')" , "border":"1px solid "+g_categories[val.id.split("-")[0]].color })
+			.attr('data-id',val.id);
 			$(".content").append(contentImg);
 		});
-		initPageCss();
+		var imageWidth = $('.contentImg').width();
+		$('.contentImg').css('height', imageWidth+"px");
+		
 	});
 }
+
 // listening to the document for click event to contentImage class and exec the async function
 $(document).on('click','.contentImg',function(){
-	console.log($(this).attr('data-id'));
+	 console.log($(this).attr('data-id'));
+	 g_currWork = $(this).attr('data-id');
+	 changePage('workPage');
 });
+
+
 
 function aboutUs(){
 	
@@ -78,3 +108,9 @@ function initStaticData(){
 	}); 
 }
 
+function changePage(page){
+	$.mobile.changePage("#"+page, {
+			transition : "none",
+			changeHash : true
+		});
+}

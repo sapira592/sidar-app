@@ -28,7 +28,7 @@ html {
 
 /* header */
 [data-role=header] {
-	height: 167px;
+	/*height: 167px;*/
 	width: 100%;
 	margin:auto;
 	text-align: center;
@@ -174,8 +174,7 @@ header .navigation {
   background-size: cover;
   background-position:center center;
   background-repeat: no-repeat;
-  border: 1px solid red;
-  border-left-style:1px solid black;
+  /*border-left-style:1px solid black;*/
   margin: 2px 0 6px 0px;
   /*border-left:1px solid black;*/
 }
