@@ -1,26 +1,26 @@
 g_data = {};
-g_currWork='';
-g_categories={
-	F:{
-		color:"red",
-		name:"אופנה"
+g_currWork = '';
+g_categories = {
+	F : {
+		color : "red",
+		name : "אופנה"
 	},
-	G:{
-		color:"blue",
-		name:"גרפיקה"
+	G : {
+		color : "blue",
+		name : "גרפיקה"
 	},
-	I:{
-		color:"yellow",
-		name:"תעשייתי"
+	I : {
+		color : "yellow",
+		name : "תעשייתי"
 	},
-	J:{
-		color:"black",
-		name:"תכשיטים"
+	J : {
+		color : "black",
+		name : "תכשיטים"
 	}
 };
 
 $(document).ready(function() {
-	$.mobile.defaultPageTransition="none";
+	$.mobile.defaultPageTransition = "none";
 	initPageCss();
 	updateMainScreen();
 	initStaticData();
@@ -31,51 +31,61 @@ $(window).resize(function() {
 });
 
 function initPageCss() {
-	$('[data-role=header]').css('width', window.innerWidth-30 + "px");
-	$('[data-role=header]').css('height', $('.container').height()+$('.navigation').height()+24 + "px");
-	$("[data-role=content]").css("height", window.innerHeight-$('[data-role=header]').height() + "px");
+	var container = $('.container').height() ;
+	var nav = $('.navigation').height();
 	
-	//$('#workPage [data-role=header]').css('height', $('#workPage .container').height()+$('#workPage .navigation').height()+24 + "px");
-	//$("#workPage [data-role=content]").css("height", window.innerHeight-$('#workPage [data-role=header]').height() + "px");
+	$('[data-role=header]').css('width', window.innerWidth - 30 + "px");
 	
+	$('[data-role=header]').css('height', container + nav + "px !important");
+	$("[data-role=content]").css("height", window.innerHeight - $('[data-role=header]').height()+ "px");
+
+
+	var container = $('#workPage .container').height() ;
+	var nav = $('#workPage .navigation').height();
+	
+	$('#workPage [data-role=header]').css('height', container + nav + "px !important");
+	$("#workPage [data-role=content]").css("height", window.innerHeight-$('#workPage [data-role=header]').height() + "px");
+
+	var imageWidth = $('.contentImg').width();
+	$('.contentImg').css('height', imageWidth + "px");
+	console.log($('.contentImg').width(),$('.contentImg').height())
 }
+
 
 $(window).on('hashchange', function(e) {
 	// if (e.originalEvent.newURL.indexOf('#filterPage') != -1) {}
 
 });
 
-
 function updateMainScreen() {
 	$.getJSON("json/images.json", function(data) {
 		$.each(data, function(key, val) {
-			var contentImg= $("<div>").addClass("contentImg")
-			.css({"backgroundImage":"url('"+val.url+"')" , "border":"1px solid "+g_categories[val.id.split("-")[0]].color })
-			.attr('data-id',val.id);
+			var contentImg = $("<div>").addClass("contentImg").css({
+				"backgroundImage" : "url('" + val.url + "')",
+				"border" : "1px solid " + g_categories[val.id.split("-")[0]].color
+			}).attr('data-id', val.id);
 			$(".content").append(contentImg);
 		});
-		var imageWidth = $('.contentImg').width();
-		$('.contentImg').css('height', imageWidth+"px");
-		
+		// var imageWidth = $('.contentImg').width();
+		// $('.contentImg').css('height', imageWidth + "px");
+		initPageCss();
 	});
 }
 
 // listening to the document for click event to contentImage class and exec the async function
-$(document).on('click','.contentImg',function(){
-	 console.log($(this).attr('data-id'));
-	 g_currWork = $(this).attr('data-id');
-	 changePage('workPage');
+$(document).on('click', '.contentImg', function() {
+	console.log($(this).attr('data-id'));
+	g_currWork = $(this).attr('data-id');
+	changePage('workPage');
 });
 
+function aboutUs() {
 
-
-function aboutUs(){
-	
-	$('#aboutPage .content').css("display","none");
+	$('#aboutPage .content').css("display", "none");
 	$('#aboutPage #content article').remove();
-	var article=$('<article>').addClass('textBox');
+	var article = $('<article>').addClass('textBox');
 	/*val- the current object
-  	key-index*/
+	 key-index*/
 	$.each(g_data.info, function(key, val) {
 		var shenkar = $('<p>').addClass("textBox_title").html(val.title);
 		var shenkar_content = $('<p>').addClass("textBox_content").html(val.content);
@@ -84,10 +94,8 @@ function aboutUs(){
 	$('#aboutPage #content').append(article);
 }
 
+function goals() {
 
-
-function goals(){
-	
 	$('#aboutPage .content').css("display", "none");
 	$('#aboutPage #content article').remove();
 	var article = $('<article>').addClass('textBox');
@@ -98,19 +106,19 @@ function goals(){
 		shenkar_content.append(li);
 	});
 	article.append(shenkar_content);
- 	$('#aboutPage #content').append(article);
+	$('#aboutPage #content').append(article);
 
 }
 
-function initStaticData(){
+function initStaticData() {
 	$.getJSON("json/data.json", function(data) {
 		g_data = data;
-	}); 
+	});
 }
 
-function changePage(page){
-	$.mobile.changePage("#"+page, {
-			transition : "none",
-			changeHash : true
-		});
+function changePage(page) {
+	$.mobile.changePage("#" + page, {
+		transition : "none",
+		changeHash : true
+	});
 }

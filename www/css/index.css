@@ -6,7 +6,7 @@
 	color: black;
 	text-transform: none;
 }
-body{
+body {
 	overflow-y: hidden;
 	direction: rtl;
 	list-style-type: none;
@@ -28,70 +28,63 @@ html {
 
 /* header */
 [data-role=header] {
-	/*height: 167px;*/
+	/*height: 165px;*/
+	/*height:auto;*/
 	width: 100%;
-	margin:auto;
+	margin: auto;
 	text-align: center;
 	text-shadow: none;
 	background-color: white !important;
 	border-color: white !important;
-
 }
 
-.ui-header-fixed{
-	padding:0px;
+.ui-header-fixed {
+	padding: 0px;
 }
 
-header div {
-	display: inline-block;
-
-}
-
-
-header .container {
-	height: 40px;
+[data-role=header] .container {
+	height: 50px;
 	width: 100%;
-
 	position: relative;
-	display:inline-block;
-	text-align:center;
+	display: inline-block;
+	text-align: center;
 	text-shadow: none;
 }
 
-
-.title, .back, .shenkar_logo{
+.title, .back, .shenkar_logo {
 	height: 40px;
 	display: inline-block;
 	position: relative;
 }
 
-.title{
+.title {
 	float: right;
 	width: 95%;
-	
 }
-
-.hebrew{
-	font-size:18px;
+.container a {
+	overflow: hidden;
+}
+.hebrew {
+	font-size: 18px;
 	position: relative;
 	/*top:9px;*/
-	line-height:38px;
+	line-height: 38px;
 }
 
-.back{
-	width:5%;
+.back {
+	width: 5%;
 	float: left;
-	line-height:39px;
+	line-height: 39px;
 	text-align: left;
 }
 
 .shenkar_logo {
 	height: auto;
-	float:right;
+	float: right;
 	/*width:22px;*/
-	width:22px;
+	width: 22px;
 	/*max-width:22px;*/
-	top:10px;
+	top: 10px;
 	text-shadow: none;
 }
 
@@ -99,51 +92,47 @@ header .container {
 	height: 10px;
 	width: 100%;
 	position: relative;
-	top:-10px;
+	top: -10px;
 	/*float: right;*/
 }
 
 /* אחוזים-בהתאם למסך.  פיקסל-נשאר קבוע.*/
-header .navigation {
-	top:-8px;
-	position:relative; 	
-	width:100%;
+[data-role=header] .navigation {
+	top: -10px;
+	position: relative;
+	width: 100%;
 	-webkit-column-count: 2; /* Chrome, Safari, Opera */
 	-moz-column-count: 2; /* Firefox */
 	column-count: 2;
 	-webkit-column-gap: 8px; /* Chrome, Safari, Opera */
 	-moz-column-gap: 8px; /* Firefox */
 	column-gap: 8px;
-	
 }
 
-
-.nav{
-	width:98%;
-	position: :relative;
-	display:inline-block;
-	height:24px;
-	margin:7px 0 0 0;
-	font-size:13px;
+.nav {
+	width: 98%;
+	position:  :relative;
+	display: inline-block;
+	height: 24px;
+	margin: 7px 0 0 0;
+	font-size: 13px;
 	line-height: 25px;
 	text-shadow: none;
-	color:black !important;
+	color: black !important;
 	border: 1px solid #D0D0D0;
 }
 
-.nav:active , .nav:focus{
-	background-color: #E0E0E0 ;
+.nav:active, .nav:focus {
+	background-color: #E0E0E0;
 }
 
-.ui-link{
-	color:black !important;
+.ui-link {
+	color: black !important;
 }
-
-
 
 /* content css */
 #content {
-	top:-1px;
+	top: -1px;
 	position: relative;
 	padding: 0;
 	padding-right: 15px;
@@ -152,37 +141,34 @@ header .navigation {
 	height: 100%;
 	text-align: center;
 	/*background-image: url('../img/background.jpg');
-	background-size: 100% 100%;
-	background-repeat: repeat;*/
+	 background-size: 100% 100%;
+	 background-repeat: repeat;*/
 	font-family: Arial;
 	direction: rtl;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
 
-#content::-webkit-scrollbar { 
-    display: none; 
+#content::-webkit-scrollbar {
+	display: none;
 }
 
-
-.contentImg{
-  display: inline-block;
-  height: 100%;
-  width: 97%;
-  /*background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRBwXVwNmnJnxaHDHbJLY2ttOtUUPNxgVI4-OW_rP9NIwqiWA5x');*/
-  background-size: calc(100% - 15px) calc(100% - 15px);
-  background-size: cover;
-  background-position:center center;
-  background-repeat: no-repeat;
-  /*border-left-style:1px solid black;*/
-  margin: 2px 0 6px 0px;
-  /*border-left:1px solid black;*/
+.contentImg {
+	display: inline-block;
+	height: 22vw;
+	width: 22vw;
+	/*background-size: calc(100% - 15px) calc(100% - 15px);*/
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	/*border-left-style:1px solid black;*/
+	margin: 2px 0 6px 0px;
+	/*border-left:1px solid black;*/
 }
 
 .content {
 	border-collapse: collapse;
 }
-
 
 .four_columns {
 	-webkit-column-count: 4; /* Chrome, Safari, Opera */
@@ -211,28 +197,27 @@ header .navigation {
 	column-gap: 10px;
 }
 
-.textBox{
-      text-align: right;
-  background-color:#F0F0F0;
-  height: auto;
-  line-height: 20px;
+.textBox {
+	text-align: right;
+	background-color: #F0F0F0;
+	height: auto;
+	line-height: 20px;
 }
 
-.textBox_title{
-	font-size:13px;
+.textBox_title {
+	font-size: 13px;
 	font-weight: bold;
-	
 }
 
-.textBox_content{
-	text-align:justify;
-	font-size:13px;
+.textBox_content {
+	text-align: justify;
+	font-size: 13px;
 	margin-bottom: 15px;
 }
 
 .list {
-	text-align:justify;
-	list-style:circle !important;
-	list-style-type:circle !important;
-	  margin-right: 22px;
+	text-align: justify;
+	list-style: circle !important;
+	list-style-type: circle !important;
+	margin-right: 22px;
 }
