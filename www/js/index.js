@@ -112,21 +112,24 @@ function display_data(text) {
 }
 
 
-function events(text) {
-
-	$('#aboutPage .content').css("display", "none");
-	$('#aboutPage #content article').remove();
-	var article = $('<article>').addClass('textBox');
-
-	var shenkar_content = $('<ul>').addClass("textBox_content").addClass("list");
-	$.each(g_data[text], function(key, val) {
-		var li = $('<li>').html(val);
-		shenkar_content.append(li);
-	});
-	article.append(shenkar_content);
-	$('#aboutPage #content').append(article);
-
+function globalEvents() {
+	var article = $('<div>').addClass("content").addClass("four_columns");
+	$.getJSON("json/events.json", function(data) {
+		console.log(data)
+		$.each(data.events, function(key, val) {
+			var contentImg = $("<div>").addClass("contentImg").css({
+				"backgroundImage" : "url('" + val.url + "')",
+				"border" : "1px solid " 
+			}).attr('data-id', val.id);
+			article.append(contentImg);
+		});
+		$('#eventsPage #content').html('');
+	$('#eventsPage #content').append(article);
+	
+});
 }
+
+function event(){}
 
 function initStaticData() {
 	$.getJSON("json/data.json", function(data) {
