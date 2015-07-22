@@ -1,147 +1,183 @@
 [
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-WsW-004.jpg",
-		"id":"F-ByR-WsW-004"
+		"id":"F-ByR-WsW-004",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-ShB-Pos-013.jpg",
-		"id":"G-ShB-Pos-013"
+		"id":"G-ShB-Pos-013",
+		"color":"blue"
 	},
 	{
 		"url": "temp/images/G-RaR-CoI-001.jpg",
-		"id":"G-RaR-CoI-001"
+		"id":"G-RaR-CoI-001",
+		"color":"blue"
 	},
 	{
 		"url": "temp/images/I-StA-ChF-001.jpg",
-		"id":"I-StA-ChF-001"
+		"id":"I-StA-ChF-001",
+		"color":"green"
 	},
 	{
 		"url": "temp/images/J-StD-Bro-007.jpg",
-		"id":"J-StD-Bro-007"
+		"id":"J-StD-Bro-007",
+		"color":"green"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"gray"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"gray"
 	},
 	{
 		"url": "temp/images/F-ByR-WsW-004.jpg",
-		"id":"F-ByR-WsW-004"
+		"id":"F-ByR-WsW-004",
+		"color":"yellow"
 	},
 	{
 		"url": "temp/images/G-ShB-Pos-013.jpg",
-		"id":"G-ShB-Pos-013"
+		"id":"G-ShB-Pos-013",
+		"color":"yellow"
 	},
 	{
 		"url": "temp/images/G-RaR-CoI-001.jpg",
-		"id":"G-RaR-CoI-001"
+		"id":"G-RaR-CoI-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/I-StA-ChF-001.jpg",
-		"id":"I-StA-ChF-001"
+		"id":"I-StA-ChF-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/J-StD-Bro-007.jpg",
-		"id":"J-StD-Bro-007"
+		"id":"J-StD-Bro-007",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-WsW-004.jpg",
-		"id":"F-ByR-WsW-004"
+		"id":"F-ByR-WsW-004",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-ShB-Pos-013.jpg",
-		"id":"G-ShB-Pos-013"
+		"id":"G-ShB-Pos-013",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-RaR-CoI-001.jpg",
-		"id":"G-RaR-CoI-001"
+		"id":"G-RaR-CoI-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/I-StA-ChF-001.jpg",
-		"id":"I-StA-ChF-001"
+		"id":"I-StA-ChF-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/J-StD-Bro-007.jpg",
-		"id":"J-StD-Bro-007"
+		"id":"J-StD-Bro-007",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-WsW-004.jpg",
-		"id":"F-ByR-WsW-004"
+		"id":"F-ByR-WsW-004",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-ShB-Pos-013.jpg",
-		"id":"G-ShB-Pos-013"
+		"id":"G-ShB-Pos-013",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-RaR-CoI-001.jpg",
-		"id":"G-RaR-CoI-001"
+		"id":"G-RaR-CoI-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/I-StA-ChF-001.jpg",
-		"id":"I-StA-ChF-001"
+		"id":"I-StA-ChF-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/J-StD-Bro-007.jpg",
-		"id":"J-StD-Bro-007"
+		"id":"J-StD-Bro-007",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-WsW-004.jpg",
-		"id":"F-ByR-WsW-004"
+		"id":"F-ByR-WsW-004",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-ShB-Pos-013.jpg",
-		"id":"G-ShB-Pos-013"
+		"id":"G-ShB-Pos-013",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/G-RaR-CoI-001.jpg",
-		"id":"G-RaR-CoI-001"
+		"id":"G-RaR-CoI-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/I-StA-ChF-001.jpg",
-		"id":"I-StA-ChF-001"
+		"id":"I-StA-ChF-001",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/J-StD-Bro-007.jpg",
-		"id":"J-StD-Bro-007"
+		"id":"J-StD-Bro-007",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	},
 	{
 		"url": "temp/images/F-ByR-TrF-014.jpg",
-		"id":"F-ByR-TrF-014"
+		"id":"F-ByR-TrF-014",
+		"color":"red"
 	}
 	
 	
