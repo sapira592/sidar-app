@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\ant-gen\com\shenkar\sidar\R.java \
  : c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\res\drawable\icon.png \
 c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\res\drawable-hdpi\icon.png \
@@ -28,3 +29,35 @@ c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawab
 c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-port-xhdpi\screen.png \
 c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-xhdpi\icon.png \
 c:\Users\sapir\Documents\GitHub\sidar-app\platforms\android\ant-build\AndroidManifest.xml \
+=======
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-gen\com\shenkar\sidar\R.java \
+ : D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-hdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-land-hdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-land-ldpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-land-mdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-land-xhdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-ldpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-mdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-port-hdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-port-ldpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-port-mdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-port-xhdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\drawable-xhdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\values\strings.xml \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\res\xml\config.xml \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-hdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-land-hdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-land-ldpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-land-mdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-land-xhdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-ldpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-mdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-port-hdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-port-ldpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-port-mdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-port-xhdpi\screen.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\res\drawable-xhdpi\icon.png \
+D:\Documents\Documents\GitHub\sidar-app\platforms\android\ant-build\AndroidManifest.xml \
+>>>>>>> origin/gh-pages

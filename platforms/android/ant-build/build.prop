@@ -1,5 +1,9 @@
 #Last build type
+<<<<<<< HEAD
 #Sun, 05 Jul 2015 13:27:21 +0300
+=======
+#Sun, 05 Jul 2015 13:31:24 +0300
+>>>>>>> origin/gh-pages
 
 build.last.target=debug
 

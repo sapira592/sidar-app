@@ -1,0 +1,36 @@
+Here is the full bundle's list to use within the Solr search and at the bottomm you can find an example of how to use the random functionality, as you asked.
+
+About the taxonomy list, as i told you this morning, it will be provided under the V2 .
+
+
+bundles list
+article
+bibliography
+collector
+contributors
+designer
+document
+events
+fashion_design
+industrial_design
+jewelry_design
+magazine
+media
+page
+philosophy
+news
+text
+visual_communication
+websites
+writer
+
+
+
+random search
+&sort=random_<Integer>+<method>
+
+when:
+method can be either asc or desc
+Integer is a random integer
+Example:
+&sort=random_1452+asc
