@@ -1,0 +1,31 @@
+{
+	"events":
+	[
+		{
+			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/tmvnvt_ptykhh_ltr_hmkvn_1.1.12.jpg?itok=ZDMTEyLp",
+			"id":"1",
+			"title":"פתיחת אתר מכון שנקר",
+			"images":[
+				"id":"1.1",
+				"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/Machon4.jpg?itok=YR73i_-w"
+			]
+		
+		},
+		
+		{
+			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/G-ShI-PeP-167.jpg?itok=KwH5Ixn9",
+			"id":"2",
+			"title":"עיצוב הזיכרון",
+			"images":[
+				"id":"2.1",
+				"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/G-ShI-PeP-130.jpg?itok=WhJGVbm4"
+			]
+		
+		}
+		
+	
+	]
+
+
+
+}

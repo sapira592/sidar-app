@@ -94,14 +94,32 @@ function aboutUs() {
 	$('#aboutPage #content').append(article);
 }
 
-function goals() {
+
+function display_data(text) {
 
 	$('#aboutPage .content').css("display", "none");
 	$('#aboutPage #content article').remove();
 	var article = $('<article>').addClass('textBox');
 
 	var shenkar_content = $('<ul>').addClass("textBox_content").addClass("list");
-	$.each(g_data.goals, function(key, val) {
+	$.each(g_data[text], function(key, val) {
+		var li = $('<li>').html(val);
+		shenkar_content.append(li);
+	});
+	article.append(shenkar_content);
+	$('#aboutPage #content').append(article);
+
+}
+
+
+function events(text) {
+
+	$('#aboutPage .content').css("display", "none");
+	$('#aboutPage #content article').remove();
+	var article = $('<article>').addClass('textBox');
+
+	var shenkar_content = $('<ul>').addClass("textBox_content").addClass("list");
+	$.each(g_data[text], function(key, val) {
 		var li = $('<li>').html(val);
 		shenkar_content.append(li);
 	});
