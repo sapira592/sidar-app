@@ -1,5 +1,6 @@
 g_data = {};
 g_currWork = '';
+g_currIndex = '';
 g_categories = {
 	F : {
 		color : "red",
@@ -63,7 +64,8 @@ function updateMainScreen() {
 			var contentImg = $("<div>").addClass("contentImg").css({
 				"backgroundImage" : "url('" + val.url + "')",
 				"border" : "1px solid " + g_categories[val.id.split("-")[0]].color
-			}).attr('data-id', val.id);
+			}).attr('data-index', val.index);
+			
 			$(".content").append(contentImg);
 		});
 		// var imageWidth = $('.contentImg').width();
@@ -73,15 +75,29 @@ function updateMainScreen() {
 }
 
 // listening to the document for click event to contentImage class and exec the async function
+/*
 $(document).on('click', '.contentImg', function() {
 	console.log($(this).attr('data-id'));
 	g_currWork = $(this).attr('data-id');
 	changePage('workPage');
 });
+*/
+
+
+$(document).on('click', '.contentImg', function() {
+	console.log($(this).attr('data-index'));
+	g_currIndex = $(this).attr('data-index');
+	if(g_currIndex == "1")
+		changePage('workPage');
+	else
+		changePage('eventWorkPage');
+});
+
 
 function aboutUs() {
 
-	$('#aboutPage .content').css("display", "none");
+debugger
+	//$('#aboutPage .content').css("display", "none");
 	$('#aboutPage #content article').remove();
 	var article = $('<article>').addClass('textBox');
 	/*val- the current object

@@ -2,8 +2,10 @@
 	"events":
 	[
 		{
+			
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/tmvnvt_ptykhh_ltr_hmkvn_1.1.12.jpg?itok=ZDMTEyLp",
 			"id":"1",
+			"index":"2",
 			"title":"פתיחת אתר מכון שנקר",
 			"images":[{
 				"id":"11",
@@ -16,6 +18,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/G-ShI-PeP-167.jpg?itok=KwH5Ixn9",
 			"id":"2",
+			"index":"2",
 			"title":"עיצוב הזיכרון",
 			"images":[{
 				"id":"21",
@@ -28,6 +31,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/cimg0002_0.jpg?itok=aRhQXwUs",
 			"id":"3",
+			"index":"2",
 			"title":"מכון שנקר בהרוורד",
 			"images":[{
 				"id":"31",
@@ -40,6 +44,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/CIMG0114.JPG?itok=C2ZG29ym",
 			"id":"4",
+			"index":"2",
 			"title":"ביקור באוניברסיטת בריטון",
 			"images":[{
 				"id":"41",
@@ -53,6 +58,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/ptykht_pstyvytl.jpg?itok=GOKW06Ft",
 			"id":"5",
+			"index":"2",
 			"title":"פסטיויטל",
 			"images":[{
 				"id":"51",
@@ -66,6 +72,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/Unesco%20-1.jpg?itok=xjtzq3VL",
 			"id":"6",
+			"index":"2",
 			"title":"מורשת היברידית",
 			"images":[{
 				"id":"61",
@@ -79,6 +86,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/Minerva-katalog-cover.jpg?itok=3J7Db3yE",
 			"id":"7",
+			"index":"2",
 			"title":"מינרווה/אווה",
 			"images":[{
 				"id":"71",
@@ -91,6 +99,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/afternon%20in%20shenkar%20poster.jpg?itok=j9jWxqAA",
 			"id":"8",
+			"index":"2",
 			"title":"צהריים בשנקר",
 			"images":[{
 				"id":"81",
@@ -103,6 +112,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/ptykhh_khbr_hnmnym.jpg?itok=hoZctrb7",
 			"id":"9",
+			"index":"2",
 			"title":"חבר הנאמנים",
 			"images":[{
 				"id":"91",
@@ -116,6 +126,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/IMG_4227_1.JPG?itok=py8v3sVq",
 			"id":"10",
+			"index":"2",
 			"title":"אירוח משפחת שמיר",
 			"images":[{
 				"id":"101",
@@ -129,6 +140,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/_MG_5270_0.JPG?itok=FLnE_n6V",
 			"id":"11",
+			"index":"2",
 			"title":"שולחן עגול",
 			"images":[{
 				"id":"111",
@@ -141,6 +153,7 @@
 		{
 			"url":"http://192.116.128.64/newsite/shenkar/sites/default/files/styles/work_image/public/P1060662%20S.jpg?itok=AZi5x3Gm",
 			"id":"12",
+			"index":"2",
 			"title":"הצגת המכון למשרד החינוך",
 			"images":[{
 				"id":"121",

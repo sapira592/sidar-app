@@ -81,35 +81,13 @@
                 </div>
                 
                 <div class="navigation">
-                    <a href="#eventsPage" class="nav" onclick="globalEvents()">אירועים</a>
-                    <a href="#" class="nav" onclick="">חיפוש</a>
-
-                </div>
-            </header>
-
-            <div data-role="content" class="ui-content" id="content">
-                <div class="content four_columns"></div>
-            </div>
-        </div>
-
-
-    <div data-role="page" id="display_eventsPage" >
-            <header data-role="header" data-position="fixed" data-tap-toggle="false">
-
-                <div class="container">
-
-                    <a href="#welcomePage" class="title"> <img class="shenkar_logo" src="img/shenkar_logo.png"> <span class="hebrew"> מכון שנקר לתיעוד וחקר העיצוב בישראל </span> </a>
-                    <a href="#" class="back" onclick="window.history.back();"> > </a>
-                    <img src="img/sidar_logo_horizontal.jpg" class="sidar_logo">
-                </div>
-                
-                <div class="navigation">
                     <a href="#" class="nav" onclick="aboutUs()">אודותינו</a>
-                    <a href="#" class="nav" onclick="display_data('goals')">מטרות המכון</a>
-                    <a href="#" class="nav" onclick="display_data('messages')">הודעות</a>
-                    <a href="#" class="nav" >אירועים</a>
-                    <a href="#" class="nav" onclick="display_data('contact')">צור קשר</a>
-                    <a href="#" class="nav">חיפוש</a>
+					<a href="#" class="nav" onclick="display_data('goals')">מטרות המכון</a>
+					<a href="#" class="nav" onclick="display_data('messages')">הודעות</a>
+					<a href="#eventsPage" class="nav" onclick="globalEvents()">אירועים</a>
+					<a href="#" class="nav" onclick="display_data('contact')">צור קשר</a>
+					<a href="#" class="nav">חיפוש</a>
+
                 </div>
             </header>
 
@@ -117,6 +95,8 @@
                 <div class="content four_columns"></div>
             </div>
         </div>
+
+
 
 		<div data-role="page" id="workPage" >
 			<header data-role="header" data-position="fixed" data-tap-toggle="false">
@@ -137,7 +117,29 @@
 			<div data-role="content" class="ui-content" id="content">
 				<div class="content four_columns"></div>
 			</div>
-		</div
+		</div>
+		
+		
+	 <div data-role="page" id="eventWorkPage" >
+			<header data-role="header" data-position="fixed" data-tap-toggle="false">
+
+				<div class="container">
+					<a href="#welcomePage" class="title"> <img class="shenkar_logo" src="img/shenkar_logo.png"> <span class="hebrew"> מכון שנקר לתיעוד וחקר העיצוב בישראל </span> </a>
+					<a href="#" class="back" onclick="window.history.back();"> > </a>
+					<img src="img/sidar_logo_horizontal.jpg" class="sidar_logo">
+				</div>
+
+				
+				<div class="navigation">
+					<a href="#eventsPage" class="nav" onclick="globalEvents()">אירועים</a>
+					<a href="#" class="nav" onclick="">חיפוש</a>
+				</div>
+			</header>
+
+			<div data-role="content" class="ui-content" id="content">
+				<div class="content four_columns"></div>
+			</div>
+		</div>
 
 		<script type="text/javascript" src="cordova.js"></script>
 		<!--<script type="text/javascript" src="js/index.js"></script> -->
