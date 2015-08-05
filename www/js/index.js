@@ -20,6 +20,8 @@ g_categories = {
 	}
 };
 
+
+
 $(document).ready(function() {
 	$.mobile.defaultPageTransition = "none";
 	initPageCss();
@@ -88,18 +90,20 @@ $(document).on('click', '.contentImg', function() {
 	console.log($(this).attr('data-index'));
 	g_currIndex = $(this).attr('data-index');
 	if(g_currIndex == "1")
-		changePage('workPage');
-	else
-		changePage('eventWorkPage');
+		changePageImg('workPage');
+	else{
+		changePageEvent('eventWorkPage',$(this));
+	}
+		
 });
 
 
 function aboutUs() {
 
-debugger
-	//$('#aboutPage .content').css("display", "none");
-	$('#aboutPage #content article').remove();
 	var article = $('<article>').addClass('textBox');
+	$('#aboutPage .content').css("display", "none");
+	$('#aboutPage #content article').remove();
+	
 	/*val- the current object
 	 key-index*/
 	$.each(g_data.info, function(key, val) {
@@ -131,7 +135,7 @@ function display_data(text) {
 function globalEvents() {
 	var article = $('<div>').addClass("content").addClass("four_columns");
 	$.getJSON("json/events.json", function(data) {
-		console.log(data)
+		console.log(data);
 		$.each(data.events, function(key, val) {
 			var contentImg = $("<div>").addClass("contentImg").css({
 				"backgroundImage" : "url('" + val.url + "')",
@@ -145,7 +149,6 @@ function globalEvents() {
 });
 }
 
-function event(){}
 
 function initStaticData() {
 	$.getJSON("json/data.json", function(data) {
@@ -153,9 +156,45 @@ function initStaticData() {
 	});
 }
 
-function changePage(page) {
+
+function changePageImg(page) {
 	$.mobile.changePage("#" + page, {
 		transition : "none",
 		changeHash : true
 	});
+}
+
+
+function changePageEvent(page,text) {
+	$.mobile.changePage("#" + page, {
+		transition : "none",
+		changeHash : true
+	});
+	display_dataEvents(text);
+}
+
+
+function display_dataEvents(text){
+	$('#eventWorkPage .content').css("display", "none");
+	$('#eventWorkPage #content article').remove();
+	var article = $('<article>').addClass('textBox');
+	var shenkar_content;
+	
+	$.getJSON("json/events.json", function(data){
+		console.log(data);
+		$.each(data.events, function(key, val) {
+			if(val.id == '2'){
+				var shenkar_content = $('<ul>').addClass("textBox_content").addClass("list");
+				var li = $('<li>').html(val);
+				shenkar_content.append(li);
+				console.log(shenkar_content);
+			}
+			
+		})
+	
+	});
+		
+	article.append(shenkar_content);
+	$('#eventWorkPage #content').append(article);
+		
 }
