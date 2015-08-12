@@ -1,0 +1,2 @@
+fixe left border in contentImg
+
