@@ -15,15 +15,33 @@
 
 	<div data-role="content" class="ui-content" id="content">
 		<div class="content one_columns">
+			
 			<div ng-if="state == 0" >
 				<article ng-repeat="info in data.info">
 					<p class="textBox_title">{{info.title}}</p>
 					<p class="textBox_content">{{info.content}} </p>
 				</article>
 			</div>
-			<div ng-if="state == 2" >
-				{{data.messages}}
+			
+			<div ng-if="state == 1" >
+				<article ng-repeat="goal in data.goals">
+					<p class="textBox_content"><ul class="list"><li>{{goal}} </li></ul></p>
+				</article>
 			</div>
+			
+			<div ng-if="state == 2" >
+				<article ng-repeat="msg in data.messages">
+					<p class="textBox_content">{{msg}} </p>
+				</article>
+			</div>
+			
+			<div ng-if="state == 4" >
+				<article ng-repeat="contact in data.contact">
+					<p class="textBox_content"><ul class="list"><li>{{contact}} </li></ul></p>
+				</article>
+			</div>
+			
+			
 		</div>
 		<div class="content four_columns">
 			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">

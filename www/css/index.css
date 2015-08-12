@@ -213,11 +213,11 @@ html {
 	text-align: justify;
 	font-size: 13px;
 	margin-bottom: 15px;
+	
 }
 
 .list {
 	text-align: justify;
-	list-style: circle !important;
-	list-style-type: circle !important;
+	list-style-type: circle;
 	margin-right: 22px;
 }

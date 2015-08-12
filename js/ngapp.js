@@ -163,6 +163,7 @@ app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
 		});
 		
 	$scope.displayEvent = function($index){
+		console.log($index);
 		var currEvent = $scope.events[$index];
 		$scope.$broadcast('eventInfoBroadcast', currEvent);
 	};
@@ -183,7 +184,7 @@ app.controller('eventInfo', function($scope, $rootScope, $http, $location) {
 		path : '#/eventInfo'
 	}];
 	
-	$scope.$on('eventInfoBroadcast',function(event , data){
+	scope.$on('eventInfoBroadcast',function(event, data){
 		console.log(data);
 		$scope.event = data;
 		$location.url('/eventInfo');

@@ -219,6 +219,7 @@ article{
 }
 
 .list {
+	font-size: 13px;
 	text-align: justify;
 	list-style: circle !important;
 	list-style-type: circle !important;
