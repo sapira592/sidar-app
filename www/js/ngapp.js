@@ -19,6 +19,10 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: 'includes/eventInfo.html',
         controller: 'eventInfoCtrl'
       })
+      .when('/disciplines', {
+        templateUrl: 'includes/disciplines.html',
+        controller: 'disciplinesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -71,7 +75,7 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 		path : '#/about'
 	}, {
 		name : 'תחומי עיצוב',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'תכנים חזותיים',
 		path : '#/'
@@ -160,4 +164,43 @@ app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 		$location.url('/eventInfo');
 	});
 	
+});
+
+
+/**********************************************************************
+ * Disciplines controller
+ **********************************************************************/
+app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
+	$scope.state;
+	
+	if (!$scope.data)
+	$.getJSON("json/events.json", function(data) {
+		$scope.data = data;
+	});
+	
+	$scope.navigation = [{
+		name : 'מעצבים',
+		path : '#/'
+	}, {
+		name : 'קטגוריות',
+		path : '#/'
+	}, {
+		name : 'נושאים',
+		path : '#/'
+	}, {
+		name : 'שנים',
+		path : '#/'
+	}, {
+		name : 'תערוכות',
+		path : '#/'
+	}, {
+		name : 'חיפוש',
+		path : '#/'
+	}];
+	
+	$scope.changeState = function($index){
+		$scope.state = $index;
+	};
+		
+
 });
