@@ -173,11 +173,6 @@ app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
 	$scope.state;
 	
-	if (!$scope.data)
-	$.getJSON("json/events.json", function(data) {
-		$scope.data = data;
-	});
-	
 	$scope.navigation = [{
 		name : 'מעצבים',
 		path : '#/'
