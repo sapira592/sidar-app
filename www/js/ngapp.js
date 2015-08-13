@@ -3,7 +3,11 @@
  **********************************************************************/
 var app = angular.module('sidarApp', ['ngResource','ngRoute', 'ngStorage','angular-loading-bar']);
 
-app.config(function($locationProvider, $routeProvider) {
+app.config(function($locationProvider, $routeProvider,$compileProvider) {
+	
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
 
 	$routeProvider
       .when('/', {
@@ -18,6 +22,14 @@ app.config(function($locationProvider, $routeProvider) {
       .when('/eventInfo', {
         templateUrl: 'includes/eventInfo.html',
         controller: 'eventInfoCtrl'
+      })
+      .when('/work', {
+        templateUrl: 'includes/work.html',
+        controller: 'workCtrl'
+      })
+      .when('/designer', {
+        templateUrl: 'includes/designer.html',
+        controller: 'designerCtrl'
       })
       .when('/disciplines', {
         templateUrl: 'includes/disciplines.html',
@@ -73,7 +85,7 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
 /**********************************************************************
  * Index controller
  **********************************************************************/
-app.controller('indexCtrl', function($scope, $rootScope, $http) {
+app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 	$scope.navigation = [{
 		name : 'על המכון',
 		path : '#/about'
@@ -103,8 +115,10 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 		      // log error
 		    });
 		
-	$rootScope.getWotkFromGlobalWork = function($index){
+	$rootScope.getWorkFromGlobalWorks = function($index){
 		console.log($rootScope.globalWorks[$index]);
+		$rootScope.currWork = $rootScope.globalWorks[$index];
+		$location.url('/work');
 	};
 });
 
@@ -244,6 +258,7 @@ app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
 
 
 
+
 /**********************************************************************
  * Exhibitions controller
  **********************************************************************/
@@ -264,3 +279,44 @@ app.controller('exhibitionsCtrl', function($scope, $rootScope, $http, $location)
 	// });
 	
 });
+
+/**********************************************************************
+ * Work controller
+ **********************************************************************/
+app.controller('workCtrl', function($scope, $rootScope, $http) {
+	$scope.state;
+	
+	$scope.navigation = [{
+		name : 'דיסיפלינה',
+		path : '#/work'
+	}, {
+		name : 'חיפוש',
+		path : '#/work'
+	}];
+	
+	$scope.changeState = function($index){
+		$scope.state = $index;
+	};
+		
+});
+
+/**********************************************************************
+ * Designer controller
+ **********************************************************************/
+app.controller('designerCtrl', function($scope, $rootScope, $http) {
+	$scope.state;
+	
+	$scope.navigation = [{
+		name : 'דיסיפלינה',
+		path : '#/designer'
+	}, {
+		name : 'חיפוש',
+		path : '#/designer'
+	}];
+	
+	$scope.changeState = function($index){
+		$scope.state = $index;
+	};
+		
+});
+
