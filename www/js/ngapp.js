@@ -87,16 +87,23 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 	}];
 	
 	if (!$rootScope.globalWorks)
-		$.getJSON("json/images.json", function(data) {
-			$rootScope.globalWorks = data;
-		});
+		$http.get('json/images.json').
+		    success(function(data, status, headers, config) {
+		      $rootScope.globalWorks = data;
+		    }).
+		    error(function(data, status, headers, config) {
+		      // log error
+		    });
+		
+	$rootScope.getWotkFromGlobalWork = function($index){
+		console.log($rootScope.globalWorks[$index]);
+	};
 });
 
 /**********************************************************************
  * About controller
  **********************************************************************/
 app.controller('aboutCtrl', function($scope, $rootScope, $http) {
-	$scope.state;
 	
 	if (!$scope.data)
 	$.getJSON("json/events.json", function(data) {
@@ -124,18 +131,24 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 	}];
 	
 	$scope.changeState = function($index){
-		$scope.state = $index;
+		if ( $scope.state == $index )
+			$scope.state = -1;
+		else $scope.state = $index;
 		
-		if ($index == 3 && !$scope.events){
-			$.getJSON("json/events.json", function(data) {
-				$scope.events = data;
-			});
-		}
+		if ($scope.state == 3 && !$rootScope.events)
+			$http.get('json/events.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.events = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
 	};
 		
 	$scope.displayEvent = function($index){
-		var currEvent = $scope.events[$index];
-		console.log(currEvent)
+		var currEvent = $rootScope.events[$index];
+		console.log(currEvent);
+		$rootScope.currEvent = currEvent;
 		//$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
 });
@@ -148,16 +161,16 @@ app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 
 	$scope.navigation = [{
 		name : 'אירועים',
-		path : '#/events'
+		path : '#/about'
 	}, {
 		name : 'חיפוש',
 		path : '#/eventInfo'
 	}];
 	
-	$rootScope.$on('eventInfoBroadcast',function(event , data){
-		console.log(data);
-		$scope.event = data;
-		$location.url('/eventInfo');
-	});
+	// $rootScope.$on('eventInfoBroadcast',function(event , data){
+		// console.log(data);
+		// $scope.event = data;
+		// $location.url('/eventInfo');
+	// });
 	
 });

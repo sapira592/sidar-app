@@ -16,9 +16,11 @@
 
 	<div data-role="content" class="ui-content" id="content">
 		<div class="content four_columns">
-			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
-				
-			</div>
+			<a ng-repeat="work in globalWorks" ng-click="getWotkFromGlobalWork($index)">
+				<div  class="contentImg" style="background-image: url('{{work.url}}')">
+					
+				</div>
+			</a>
 		</div>
 	</div>
 </div>
