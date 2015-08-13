@@ -21,7 +21,7 @@ app.config(function($locationProvider, $routeProvider) {
       })
        .when('/eventInfo', {
         templateUrl: 'includes/eventInfo.html',
-        controller: 'eventInfo'
+        controller: 'eventInfoCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -69,6 +69,7 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
  * Index controller
  **********************************************************************/
 app.controller('indexCtrl', function($scope, $rootScope, $http) {
+	$rootScope.globalWorks = [];
 	$scope.navigation = [{
 		name : 'על המכון',
 		path : '#/about'
@@ -89,7 +90,7 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 		path : '#/'
 	}];
 	
-	// if (!$rootScope.globalWorks)
+	if (!$rootScope.globalWorks.length)
 		$.getJSON("json/images.json", function(data) {
 			$rootScope.globalWorks = data;
 		});
@@ -137,6 +138,7 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
  * Events controller
  **********************************************************************/
 app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
+	scope.events=[];
 	$scope.navigation = [{
 		name : 'אודותינו',
 		path : '#/about'
@@ -157,14 +159,14 @@ app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
 		path : '#/about'
 	}];
 	
-	// if (!$scope.events)
+	if (!$scope.events.length)
 		$.getJSON("json/events.json", function(data) {
 			$scope.events = data;
 		});
 		
 	$scope.displayEvent = function($index){
 		var currEvent = $scope.events[$index];
-		$scope.$broadcast('eventInfoBroadcast', currEvent);
+		$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
 	
 	
@@ -173,7 +175,7 @@ app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
 /**********************************************************************
  * EventInfo controller
  **********************************************************************/
-app.controller('eventInfo', function($scope, $rootScope, $http, $location) {
+app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 
 	$scope.navigation = [{
 		name : 'אירועים',
@@ -183,7 +185,7 @@ app.controller('eventInfo', function($scope, $rootScope, $http, $location) {
 		path : '#/eventInfo'
 	}];
 	
-	$scope.$on('eventInfoBroadcast',function(event , data){
+	$rootScope.$on('eventInfoBroadcast',function(event , data){
 		console.log(data);
 		$scope.event = data;
 		$location.url('/eventInfo');
