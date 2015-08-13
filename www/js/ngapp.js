@@ -79,7 +79,7 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
 	$window.onresize = function() {
 		initPageCss();
 	};
-	
+	initPageCss();
 });
 
 /**********************************************************************
@@ -120,6 +120,8 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 		$rootScope.currWork = $rootScope.globalWorks[$index];
 		$location.url('/work');
 	};
+	
+	initPageCss();
 });
 
 /**********************************************************************
@@ -173,6 +175,8 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 		$rootScope.currEvent = currEvent;
 		//$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
+	
+	initPageCss();
 });
 
 
@@ -195,6 +199,7 @@ app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 		// $location.url('/eventInfo');
 	// });
 	
+	initPageCss();
 });
 
 
@@ -253,7 +258,7 @@ app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
 		//$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
 		
-
+	initPageCss();
 });
 
 
@@ -277,7 +282,7 @@ app.controller('exhibitionsCtrl', function($scope, $rootScope, $http, $location)
 		// $scope.event = data;
 		// $location.url('/eventInfo');
 	// });
-	
+	initPageCss();
 });
 
 /**********************************************************************
@@ -297,7 +302,7 @@ app.controller('workCtrl', function($scope, $rootScope, $http) {
 	$scope.changeState = function($index){
 		$scope.state = $index;
 	};
-		
+	initPageCss();
 });
 
 /**********************************************************************
@@ -317,6 +322,6 @@ app.controller('designerCtrl', function($scope, $rootScope, $http) {
 	$scope.changeState = function($index){
 		$scope.state = $index;
 	};
-		
+	initPageCss();	
 });
 
