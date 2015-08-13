@@ -1,0 +1,51 @@
+<div ng-controller="aboutCtrl" data-role="page" id="aboutPage" >
+	<header data-role="header" data-position="fixed" data-tap-toggle="false">
+
+		<div class="container">
+
+			<a href="#/" class="title"> <img class="shenkar_logo" src="img/shenkar_logo.png"> <span class="hebrew"> מכון שנקר לתיעוד וחקר העיצוב בישראל </span> </a>
+			<a data-target="#"  class="back" onclick="window.history.back();"> > </a>
+			<img src="img/sidar_logo_horizontal.jpg" class="sidar_logo">
+		</div>
+
+		<div class="navigation">
+			<a ng-repeat="nav in navigation" href="{{nav.path}}" ng-click="changeState($index)" class="nav">{{nav.name}}</a>
+		</div>
+	</header>
+
+
+
+
+	<div ng-if="state == 0" >
+				<article ng-repeat="info in data.info">
+					<p class="textBox_title">{{info.title}}</p>
+					<p class="textBox_content">{{info.content}} </p>
+				</article>
+			</div>
+			
+			<div ng-if="state == 1" >
+				<article ng-repeat="goal in data.goals">
+					<p class="textBox_content"><ul class="list"><li>{{goal}} </li></ul></p>
+				</article>
+			</div>
+			
+			<div ng-if="state == 2" >
+				<article ng-repeat="msg in data.messages">
+					<p class="textBox_content"><ul class="list"><li>{{msg}} </li></ul></p>
+				</article>
+			</div>
+			
+			<div ng-if="state == 4" >
+				<article ng-repeat="contact in data.contact">
+					<p class="textBox_content"><ul class="list"><li>{{contact}} </li></ul></p>
+				</article>
+			</div>
+
+
+	<div class="content four_columns">
+			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
+				
+			</div>
+		</div>
+	</div>
+</div>
