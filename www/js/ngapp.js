@@ -139,7 +139,7 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
  * Events controller
  **********************************************************************/
 app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
-	scope.events=[];
+	$scope.events=[];
 	$scope.navigation = [{
 		name : 'אודותינו',
 		path : '#/about'
