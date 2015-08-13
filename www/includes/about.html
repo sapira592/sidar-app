@@ -1,4 +1,4 @@
-<div ng-controller="aboutCtrl" data-role="page" id="aboutPage" >
+<div data-role="page" id="aboutPage" >
 	<header data-role="header" data-position="fixed" data-tap-toggle="false">
 
 		<div class="container">
@@ -13,10 +13,9 @@
 		</div>
 	</header>
 
-
-
-
-	<div ng-if="state == 0" >
+	<div data-role="content" class="ui-content" id="content">
+		<div class="content one_columns">
+			<div ng-if="state == 0" >
 				<article ng-repeat="info in data.info">
 					<p class="textBox_title">{{info.title}}</p>
 					<p class="textBox_content">{{info.content}} </p>
@@ -40,12 +39,22 @@
 					<p class="textBox_content"><ul class="list"><li>{{contact}} </li></ul></p>
 				</article>
 			</div>
+		</div>
+		
+		
+		<div ng-if="state==3" class="content four_columns">
+			<div ng-repeat="event in events" class="contentImg" style="background-image: url('{{event.url}}')" 
+			ng-click="displayEvent($index)" >
 
-
-	<div class="content four_columns">
+			</div>
+		</div>
+		
+		<div ng-if="state!=3" class="content four_columns">
 			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
 				
 			</div>
 		</div>
+		
+		
 	</div>
 </div>

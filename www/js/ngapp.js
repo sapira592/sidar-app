@@ -15,18 +15,15 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: 'includes/about.html',
         controller: 'aboutCtrl'
       })
-       .when('/events', {
-        templateUrl: 'includes/events.html',
-        controller: 'eventsCtrl'
-      })
-       .when('/eventInfo', {
+      .when('/eventInfo', {
         templateUrl: 'includes/eventInfo.html',
-        controller: 'eventInfo'
+        controller: 'eventInfoCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
 });
+
 
 app.run(function($rootScope, $window, $http, $localStorage, $location) {
 	$location.url('/temp');
@@ -89,7 +86,7 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 		path : '#/'
 	}];
 	
-	// if (!$rootScope.globalWorks)
+	if (!$rootScope.globalWorks)
 		$.getJSON("json/images.json", function(data) {
 			$rootScope.globalWorks = data;
 		});
@@ -100,7 +97,6 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
  **********************************************************************/
 app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 	$scope.state;
-	$scope.data;
 	
 	if (!$scope.data)
 	$.getJSON("json/events.json", function(data) {
@@ -118,7 +114,7 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 		path : '#/about'
 	}, {
 		name : 'אירועים',
-		path : '#/events'
+		path : '#/about'
 	}, {
 		name : 'צור קשר',
 		path : '#/about'
@@ -129,52 +125,26 @@ app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 	
 	$scope.changeState = function($index){
 		$scope.state = $index;
+		
+		if ($index == 3 && !$scope.events){
+			$.getJSON("json/events.json", function(data) {
+				$scope.events = data;
+			});
+		}
 	};
-	
-});
-
-/**********************************************************************
- * Events controller
- **********************************************************************/
-app.controller('eventsCtrl', function($scope, $rootScope, $http, $location) {
-	scope.events=[];
-	$scope.navigation = [{
-		name : 'אודותינו',
-		path : '#/about'
-	}, {
-		name : 'מטרות המכון',
-		path : '#/about'
-	}, {
-		name : 'הודעות',
-		path : '#/about'
-	}, {
-		name : 'אירועים',
-		path : '#/events'
-	}, {
-		name : 'צור קשר',
-		path : '#/about'
-	}, {
-		name : 'חיפוש',
-		path : '#/about'
-	}];
-	
-	if (!$scope.events.length)
-		$.getJSON("json/events.json", function(data) {
-			$scope.events = data;
-		});
 		
 	$scope.displayEvent = function($index){
 		var currEvent = $scope.events[$index];
-		$rootScope.$broadcast('eventInfoBroadcast', currEvent);
+		console.log(currEvent)
+		//$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
-	
-	
 });
+
 
 /**********************************************************************
  * EventInfo controller
  **********************************************************************/
-app.controller('eventInfo', function($scope, $rootScope, $http, $location) {
+app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 
 	$scope.navigation = [{
 		name : 'אירועים',
