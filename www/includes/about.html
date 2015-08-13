@@ -56,18 +56,21 @@
 				</article>
 			</div>
 		</div>
-
-		<div ng-if="state==3" class="content four_columns">
-			<div ng-repeat="event in events" class="contentImg" style="background-image: url('{{event.url}}')"
-			ng-click="displayEvent($index)" >
-
-			</div>
+		
+		<div ng-show="state==3" ng-hide="state!=3" class="content four_columns">
+			<a href="#/eventInfo" ng-repeat="event in events" ng-click="displayEvent($index)" > 
+				<div  class="contentImg" style="background-image: url('{{event.url}}')" >
+				 
+				</div>
+			</a>
 		</div>
 
 		<div ng-if="state!=3" class="content four_columns">
-			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
-
-			</div>
+			<a ng-repeat="work in globalWorks" ng-click="getWotkFromGlobalWork($index)">
+				<div  class="contentImg" style="background-image: url('{{work.url}}')">
+					
+				</div>
+			</a>
 		</div>
 
 	</div>
