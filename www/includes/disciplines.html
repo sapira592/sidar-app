@@ -17,57 +17,43 @@
 		<div class="content one_columns">
 			<div ng-if="state == 0" >
 				<article ng-repeat="info in data.info">
-					<p class="textBox_title">
-						{{info.title}}
-					</p>
-					<p class="textBox_content">
-						{{info.content}}
-					</p>
+				
 				</article>
 			</div>
 
 			<div ng-if="state == 1" >
 				<article ng-repeat="goal in data.goals">
-						<ul class="list">
-							<li class="textBox_content">
-								{{goal}}
-							</li>
-						</ul>
+					
 				</article>
 			</div>
 
 			<div ng-if="state == 2" >
 				<article ng-repeat="msg in data.messages">
-						<ul class="list">
-							<li class="textBox_content">
-								{{msg}}
-							</li>
-						</ul>
+						
 				</article>
 			</div>
 
-			<div ng-if="state == 4" >
+			<div ng-if="state == 3" >
 				<article ng-repeat="contact in data.contact">
-						<ul class="list">
-							<li class="textBox_content">
-								{{contact}}
-							</li>
-						</ul>
+					
 				</article>
 			</div>
 		</div>
 
-		<div ng-if="state==3" class="content four_columns">
-			<div ng-repeat="event in events" class="contentImg" style="background-image: url('{{event.url}}')"
-			ng-click="displayEvent($index)" >
-
-			</div>
+		<div ng-show="state==4" ng-hide="state!=4" class="content four_columns">
+			<a href="#/exhibitions" ng-repeat="exh in exhibitions" ng-click="displayExhibition($index)" > 
+				<div  class="contentImg" style="background-image: url('{{exh.url}}')" >
+				 
+				</div>
+			</a>
 		</div>
 
-		<div ng-if="state!=3" class="content four_columns">
-			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
-
-			</div>
+		<div ng-if="state!=4" class="content four_columns">
+			<a ng-repeat="work in globalWorks" ng-click="getWotkFromGlobalWork($index)">
+				<div  class="contentImg" style="background-image: url('{{work.url}}')">
+					
+				</div>
+			</a>
 		</div>
 
 	</div>

@@ -23,6 +23,10 @@ app.config(function($locationProvider, $routeProvider) {
         templateUrl: 'includes/disciplines.html',
         controller: 'disciplinesCtrl'
       })
+      .when('/exhibitions', {
+        templateUrl: 'includes/exhibitions.html',
+        controller: 'exhibitionsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -75,10 +79,10 @@ app.controller('indexCtrl', function($scope, $rootScope, $http) {
 		path : '#/about'
 	}, {
 		name : 'תחומי עיצוב',
-		path : '#/disciplines'
+		path : '#/'
 	}, {
 		name : 'תכנים חזותיים',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'תכנים עיוניים',
 		path : '#/'
@@ -186,29 +190,77 @@ app.controller('eventInfoCtrl', function($scope, $rootScope, $http, $location) {
 app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
 	$scope.state;
 	
+	if (!$scope.data)
+	$.getJSON("json/exhibitions.json", function(data) {
+		$scope.data = data;
+	});
+	
+	
 	$scope.navigation = [{
 		name : 'מעצבים',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'קטגוריות',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'נושאים',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'שנים',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'תערוכות',
-		path : '#/'
+		path : '#/disciplines'
 	}, {
 		name : 'חיפוש',
-		path : '#/'
+		path : '#/disciplines'
 	}];
 	
 	$scope.changeState = function($index){
-		$scope.state = $index;
+		if ( $scope.state == $index )
+			$scope.state = -1;
+		else $scope.state = $index;
+		
+		if ($scope.state == 4 && !$rootScope.exhibitions)
+			$http.get('json/exhibitions.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.exhibitions = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
+	};
+		
+	$scope.displayExhibition = function($index){
+		console.log($index);
+		var currExh = $rootScope.exhibitions[$index];
+		console.log(currExh);
+		$rootScope.currExh = currExh;
+		//$rootScope.$broadcast('eventInfoBroadcast', currEvent);
 	};
 		
 
+});
+
+
+
+/**********************************************************************
+ * Exhibitions controller
+ **********************************************************************/
+app.controller('exhibitionsCtrl', function($scope, $rootScope, $http, $location) {
+
+	$scope.navigation = [{
+		name : 'תערוכות',
+		path : '#/disciplines'
+	}, {
+		name : 'חיפוש',
+		path : '#/exhibitions'
+	}];
+	
+	// $rootScope.$on('eventInfoBroadcast',function(event , data){
+		// console.log(data);
+		// $scope.event = data;
+		// $location.url('/eventInfo');
+	// });
+	
 });
