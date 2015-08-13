@@ -21,14 +21,40 @@
 					<p class="textBox_content">{{info.content}} </p>
 				</article>
 			</div>
+			
+			<div ng-if="state == 1" >
+				<article ng-repeat="goal in data.goals">
+					<p class="textBox_content"><ul class="list"><li>{{goal}} </li></ul></p>
+				</article>
+			</div>
+			
 			<div ng-if="state == 2" >
-				{{data.messages}}
+				<article ng-repeat="msg in data.messages">
+					<p class="textBox_content"><ul class="list"><li>{{msg}} </li></ul></p>
+				</article>
+			</div>
+			
+			<div ng-if="state == 4" >
+				<article ng-repeat="contact in data.contact">
+					<p class="textBox_content"><ul class="list"><li>{{contact}} </li></ul></p>
+				</article>
 			</div>
 		</div>
-		<div class="content four_columns">
+		
+		
+		<div ng-if="state==3" class="content four_columns">
+			<div ng-repeat="event in events" class="contentImg" style="background-image: url('{{event.url}}')" 
+			ng-click="displayEvent($index)" >
+
+			</div>
+		</div>
+		
+		<div ng-if="state!=3" class="content four_columns">
 			<div ng-repeat="work in globalWorks" class="contentImg" style="background-image: url('{{work.url}}')">
 				
 			</div>
 		</div>
+		
+		
 	</div>
 </div>
