@@ -1,0 +1,23 @@
+<div data-role="page" id="workPage" >
+	<header data-role="header" data-position="fixed" data-tap-toggle="false">
+
+		<div class="container">
+
+			<a href="#/" class="title"> <img class="shenkar_logo" src="img/shenkar_logo.png"> <span class="hebrew"> מכון שנקר לתיעוד וחקר העיצוב בישראל </span> </a>
+			<a data-target="#"  class="back" onclick="window.history.back();"> > </a>
+			<img src="img/sidar_logo_horizontal.jpg" class="sidar_logo">
+		</div>
+
+		<div class="navigation">
+			<a ng-repeat="nav in navigation" href="{{nav.path}}" ng-click="changeState($index)" class="nav">{{nav.name}}</a>
+		</div>
+	</header>
+
+	<div data-role="content" class="ui-content" id="content">
+		<div class="content one_columns">
+				<div  class="contentImg" style="background-image: url('{{currWork.url}}')" >
+				 
+				</div>
+		</div>
+	</div>
+</div>
