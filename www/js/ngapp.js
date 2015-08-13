@@ -28,6 +28,7 @@ app.config(function($locationProvider, $routeProvider) {
       });
 });
 
+
 app.run(function($rootScope, $window, $http, $localStorage, $location) {
 	$location.url('/temp');
 	 
