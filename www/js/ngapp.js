@@ -39,6 +39,14 @@ app.config(function($locationProvider, $routeProvider,$compileProvider) {
         templateUrl: 'includes/exhibitions.html',
         controller: 'exhibitionsCtrl'
       })
+      .when('/theoreticals', {
+        templateUrl: 'includes/theoreticals.html',
+        controller: 'theoreticalsCtrl'
+      })
+      .when('/designPage', {
+        templateUrl: 'includes/designPage.html',
+        controller: 'designPageCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -91,13 +99,13 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 		path : '#/about'
 	}, {
 		name : 'תחומי עיצוב',
-		path : '#/'
+		path : '#/designPage'
 	}, {
 		name : 'תכנים חזותיים',
 		path : '#/disciplines'
 	}, {
 		name : 'תכנים עיוניים',
-		path : '#/'
+		path : '#/theoreticals'
 	}, {
 		name : 'אישי עזרה',
 		path : '#/'
@@ -261,7 +269,115 @@ app.controller('disciplinesCtrl', function($scope, $rootScope, $http) {
 	initPageCss();
 });
 
+/**********************************************************************
+ * Theoreticals controller
+ **********************************************************************/
+app.controller('theoreticalsCtrl', function($scope, $rootScope, $http) {
+	$scope.state;
+	
 
+	$scope.navigation = [{
+		name : 'אתרים',
+		path : '#/theoreticals'
+	}, {
+		name : 'כתבות',
+		path : '#/theoreticals'
+	}, {
+		name : 'מאמרים',
+		path : '#/theoreticals'
+	}, {
+		name : 'קורות חיים',
+		path : '#/theoreticals'
+	}, {
+		name : 'פילוסופיות',
+		path : '#/theoreticals'
+	}, {
+		name : 'חיפוש',
+		path : '#/theoreticals'
+	}];
+	
+	$scope.changeState = function($index){
+		if ( $scope.state == $index )
+			$scope.state = -1;
+		else $scope.state = $index;
+		
+		if ($scope.state == 0 && !$rootScope.sites)
+			$http.get('json/sites.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.sites = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
+		if ($scope.state == 1 && !$rootScope.reports)
+			$http.get('json/reports.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.reports = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
+		if ($scope.state == 2 && !$rootScope.articles)
+			$http.get('json/articles.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.articles = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
+		if ($scope.state == 4 && !$rootScope.philosophy)
+			$http.get('json/philosophy.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.philosophy = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });	    
+	};
+	
+	
+		initPageCss();
+});
+
+
+
+/**********************************************************************
+ * DesignPage controller
+ **********************************************************************/
+app.controller('designPageCtrl', function($scope, $rootScope, $http) {
+	$scope.state;
+	
+	$scope.navigation = [{
+		name : 'עיצוב אופנה',
+		path : '#/designPage'
+	}, {
+		name : 'תקשורת חזותית',
+		path : '#/designPage'
+	}, {
+		name : 'עיצוב תכשיטים',
+		path : '#/designPage'
+	}, {
+		name : 'עיצוב תעשייתי',
+		path : '#/designPage'
+	}, {
+		name : 'עיצוב טקסטיל',
+		path : '#/designPage'
+	}, {
+		name : 'חיפוש',
+		path : '#/designPage'
+	}];
+	
+	$scope.changeState = function($index){
+		if ( $scope.state == $index )
+			$scope.state = -1;
+		else $scope.state = $index;
+	};
+		
+		
+	initPageCss();
+});
+
+	
 
 
 /**********************************************************************
@@ -277,11 +393,9 @@ app.controller('exhibitionsCtrl', function($scope, $rootScope, $http, $location)
 		path : '#/exhibitions'
 	}];
 	
-	// $rootScope.$on('eventInfoBroadcast',function(event , data){
-		// console.log(data);
-		// $scope.event = data;
-		// $location.url('/eventInfo');
-	// });
+	$scope.changeState = function($index){
+		$scope.state = $index;
+	};
 	initPageCss();
 });
 
