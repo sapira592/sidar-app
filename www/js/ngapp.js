@@ -115,13 +115,26 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 	}];
 	
 	if (!$rootScope.globalWorks)
-		$http.get('json/images.json').
-		    success(function(data, status, headers, config) {
-		      $rootScope.globalWorks = data;
-		    }).
-		    error(function(data, status, headers, config) {
-		      // log error
-		    });
+		$http.get('json/images.json')
+	    .success(function(data, status, headers, config) {
+	      $rootScope.globalWorks = data;
+	    }).
+	    error(function(data, status, headers, config) {
+	      // log error
+	    });
+	    
+	    /* // to get the real images --> right now origin problem occurs ! 
+	     $http({
+			url:'http://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*:*&wt=json&indent=true&start=0&fq=bundle:visual_communication&fq=sm_field_design_categories:%28%22taxonomy_term:208%22%29&fq=tm_designer_name:%28%22%D7%91%D7%95%D7%9C%D7%A7%D7%99%D7%94+%D7%A4%D7%99%D7%9C%D7%99%D7%A4%22%29',
+			method: "GET",
+			responseType:'json'
+		})
+		.then(function(data) {
+	      	$rootScope.globalWorks = (data.response)? data.response.docs : [];
+        }, function(data) {
+        	console.log('global works', data.response || "Request failed");
+      	});
+	     * */
 		
 	$rootScope.getWorkFromGlobalWorks = function($index){
 		console.log($rootScope.globalWorks[$index]);
