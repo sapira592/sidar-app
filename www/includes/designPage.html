@@ -19,16 +19,16 @@
 			
 			<div ng-if="state == 0" style="background:#026CB9 ">
 				<article ng-repeat="info in design.fashion" >
-					<p class="textBox_title">
+					<p class="textBox_title" style="color: white">
 						{{info.title}}
 					</p>
-				<p class="textBox_content">
+				<p class="textBox_content" style="color: white">
 						{{info.content}}
 					</p> 
 				</article>
 			</div>
 			
-			<div ng-if="state == 1" style="background:#80ACE9 ">
+			<div ng-if="state == 1" style="background:#ADD8E6 ">
 				<article ng-repeat="info in design.visual" >
 					<p class="textBox_title">
 						{{info.title}}

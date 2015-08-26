@@ -214,14 +214,16 @@ article{
 }
 
 .textBox_content {
+	font-family: arial;
 	text-align: justify;
 	font-size: 13px;
+	line-height: 130%;
 	margin-bottom: 15px;
 	
 }
 
 .list {
-	font-family: arial;
+	
 	text-align: justify;
 	list-style-type: circle;
 	margin-right: 22px;
