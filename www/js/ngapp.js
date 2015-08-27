@@ -5,9 +5,9 @@ var app = angular.module('sidarApp', ['ngResource','ngRoute', 'ngStorage','angul
 
 app.config(function($locationProvider, $routeProvider,$compileProvider) {
 	
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
-    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
+    //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+    //$compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
+    //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
 
 	$routeProvider
       .when('/', {
@@ -123,6 +123,8 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 	      // log error
 	    });
 	    
+	    //plugin add https://github.com/apache/cordova-plugin-whitelist.git
+	    // <allow-navigation href="*" />
 	    /* // to get the real images --> right now origin problem occurs ! 
 	     $http({
 			url:'http://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*:*&wt=json&indent=true&start=0&fq=bundle:visual_communication&fq=sm_field_design_categories:%28%22taxonomy_term:208%22%29&fq=tm_designer_name:%28%22%D7%91%D7%95%D7%9C%D7%A7%D7%99%D7%94+%D7%A4%D7%99%D7%9C%D7%99%D7%A4%22%29',

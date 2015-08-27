@@ -28,8 +28,9 @@ html {
 
 /* header */
 [data-role=header] {
-	/*height: 165px;*/
-	/*height:auto;*/
+	/*height: 160px;*/
+	max-height: 155px;
+	height:100%;
 	width: 100%;
 	margin: auto;
 	text-align: center;
@@ -100,7 +101,7 @@ html {
 [data-role=header] .navigation {
 	top: -10px;
 	position: relative;
-	width: 100%;
+	width: calc(100% - 30px);
 	-webkit-column-count: 2; /* Chrome, Safari, Opera */
 	-moz-column-count: 2; /* Firefox */
 	column-count: 2;
@@ -108,7 +109,9 @@ html {
 	-moz-column-gap: 8px; /* Firefox */
 	column-gap: 8px;
 }
-
+article{
+	text-align: right;
+}
 .nav {
 	width: 98%;
 	position:  :relative;
@@ -213,11 +216,12 @@ html {
 	text-align: justify;
 	font-size: 13px;
 	margin-bottom: 15px;
+	
 }
 
 .list {
 	text-align: justify;
-	list-style: circle !important;
-	list-style-type: circle !important;
+	list-style-type: circle;
 	margin-right: 22px;
 }
+
