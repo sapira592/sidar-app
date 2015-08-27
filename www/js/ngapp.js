@@ -340,6 +340,14 @@ app.controller('theoreticalsCtrl', function($scope, $rootScope, $http) {
 			    error(function(data, status, headers, config) {
 			      // log error
 			    });
+		if ($scope.state == 3 && !$rootScope.resume)
+			$http.get('json/resume.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.resume = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
 		if ($scope.state == 4 && !$rootScope.philosophy)
 			$http.get('json/philosophy.json').
 			    success(function(data, status, headers, config) {
@@ -386,6 +394,14 @@ app.controller('designPageCtrl', function($scope, $rootScope, $http) {
 		if ( $scope.state == $index )
 			$scope.state = -1;
 		else $scope.state = $index;
+		
+		$http.get('json/design.json').
+			    success(function(data, status, headers, config) {
+			      $rootScope.design = data;
+			    }).
+			    error(function(data, status, headers, config) {
+			      // log error
+			    });
 	};
 		
 		
