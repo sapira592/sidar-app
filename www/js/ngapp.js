@@ -8,7 +8,8 @@ app.config(function($locationProvider, $routeProvider,$compileProvider) {
     //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
     //$compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
     //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
-
+	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
+	
 	$routeProvider
       .when('/', {
         defaultRoute:true,
@@ -83,7 +84,17 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
 			name : "תכשיטים"
 		}
 	};
-
+	document.addEventListener("deviceready", function(){
+        window.confirm = function ( message ,confirmDismissed ){
+        	navigator.notification.confirm(
+            message,
+            confirmDismissed,
+            'Sidar',  
+            'OK,Cancel'
+        	);
+        };
+	}, false);
+	
 	$window.onresize = function() {
 		initPageCss();
 	};
@@ -125,18 +136,28 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 	    
 	    //plugin add https://github.com/apache/cordova-plugin-whitelist.git
 	    // <allow-navigation href="*" />
-	    /* // to get the real images --> right now origin problem occurs ! 
-	     $http({
-			url:'http://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*:*&wt=json&indent=true&start=0&fq=bundle:visual_communication&fq=sm_field_design_categories:%28%22taxonomy_term:208%22%29&fq=tm_designer_name:%28%22%D7%91%D7%95%D7%9C%D7%A7%D7%99%D7%94+%D7%A4%D7%99%D7%9C%D7%99%D7%A4%22%29',
-			method: "GET",
-			responseType:'json'
-		})
-		.then(function(data) {
-	      	$rootScope.globalWorks = (data.response)? data.response.docs : [];
-        }, function(data) {
-        	console.log('global works', data.response || "Request failed");
-      	});
-	     * */
+	    
+	    $.ajax({
+	    	url:'http://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*A*&wt=json',
+	    	method:"get",
+	    	crossDomain: true,
+	    	dataType: "jsonp",
+	    	// ContentType:'text/plain; charset=utf-8',
+            // jsonpCallback: "",
+	    	success:function(data){
+	    		console.log('success',data);
+	    	},
+	    	error:function(err){
+	    		console.log('error',err);
+	    	}
+	    });
+		// $http.get("https://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*A*&wt=json")
+	      // .success(function(data){
+	        	// console.log(data);
+	      // })
+		 // .error(function(err){
+		 	// console.log(err);
+		 // });
 		
 	$rootScope.getWorkFromGlobalWorks = function($index){
 		console.log($rootScope.globalWorks[$index]);
@@ -358,6 +379,27 @@ app.controller('theoreticalsCtrl', function($scope, $rootScope, $http) {
 			    });	    
 	};
 	
+	
+	$scope.displaySite = function(site){
+		//{{site.urlSite}}
+		window.open(site.urlSite, '_blank');
+		
+	};
+	
+	$scope.displayPdf = function(pd){
+		window.confirm("Do you want to save the PDF?",function(r){
+			if (r == true) {
+		    var ref = window.open(pd.urlInfo, '_system', 'location=yes');
+		    console.log('pdf viewer');
+			// setTimeout(function() {
+	             // ref.close();
+	         // }, 1000);
+			} else {
+				console.log('pdf cancel');
+			    return;
+			}
+		});
+	};
 	
 		initPageCss();
 });

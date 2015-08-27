@@ -1,5 +1,5 @@
 <div data-role="page" id="theoreticals" >
-	<header data-role="header" data-position="fixed" data-tap-toggle="false">
+	<header ui-view="header"  data-role="header" data-position="fixed" data-tap-toggle="false">
 
 		<div class="container">
 
@@ -17,33 +17,33 @@
 		<div class="content one_columns">
 
 			<div ng-show="state==0" ng-hide="state!=0" class="content four_columns">
-				<a href="#/sites" ng-repeat="site in sites" ng-href="{{site.urlSite}}" target="_blank" > 
+				<a  ng-repeat="site in sites" ng-click="displaySite(site)" > 
 					<div  class="contentImg" style="background-image: url('{{site.urlPic}}')" >
 
 				</div> </a>
 			</div>
 
 			<div ng-show="state==1" ng-hide="state!=1" class="content four_columns">
-				<a href="#/reports" ng-repeat="art in reports" ng-href="{{art.urlInfo}}" target="_blank" >
+				<a  ng-repeat="art in reports" ng-click="displayPdf(art)" >
 					 <div  class="contentImg" style="background-image: url('{{art.urlPic}}')" >
 
 				</div> </a>
 			</div>
 
 			<div ng-show="state==2" ng-hide="state!=2" class="content four_columns">
-				<a href="#/articles" ng-repeat="art in articles" ng-href="{{art.urlInfo}}" target="_blank" >
+				<a  ng-repeat="art in articles" ng-click="displayPdf(art)"  >
 					 <div  class="contentImg" style="background-image: url('{{art.urlPic}}')" >
 
 				</div> </a>
 			</div>
 			<div ng-show="state==3" ng-hide="state!=3" class="content four_columns">
-				<a href="#/resume" ng-repeat="res in resume" ng-href="{{res.urlInfo}}" target="_blank" >
+				<a  ng-repeat="res in resume" ng-click="displayPdf(res)" >
 					 <div  class="contentImg" style="background-image: url('{{res.urlPic}}')" >
 
 				</div> </a>
 			</div>
 			<div ng-show="state==4" ng-hide="state!=4" class="content four_columns">
-				<a href="#/philosophy" ng-repeat="ph in philosophy" ng-href="{{ph.urlInfo}}" target="_blank" > 
+				<a  ng-repeat="ph in philosophy" ng-click="displayPdf(ph)"  > 
 					<div  class="contentImg" style="background-image: url('{{ph.urlPic}}')" >
 
 				</div> </a>
