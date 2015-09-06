@@ -19,7 +19,7 @@
 			
 			<div ng-if="state == 0" style="background:#026CB9 ">
 				<article ng-repeat="info in design.fashion" >
-					<p class="textBox_title" style="color: white">
+					<p class="textBox_title" style="color: white; margin-bottom: 10px">
 						{{info.title}}
 					</p>
 				<p class="textBox_content" style="color: white">
@@ -30,7 +30,7 @@
 			
 			<div ng-if="state == 1" style="background:#ADD8E6 ">
 				<article ng-repeat="info in design.visual" >
-					<p class="textBox_title">
+					<p class="textBox_title" style="margin-bottom: 10px">
 						{{info.title}}
 					</p>
 					<p class="textBox_content">
@@ -41,7 +41,7 @@
 
 			<div ng-if="state == 2" style="background:#FC513F ">
 				<article ng-repeat="info in design.jewelry" >
-					<p class="textBox_title">
+					<p class="textBox_title" style="margin-bottom: 10px">
 						{{info.title}}
 					</p>
 					<p class="textBox_content">
@@ -52,7 +52,7 @@
 			
 			<div ng-if="state == 3"  style="background:#FCA649 " >
 				<article ng-repeat="info in design.industrial">
-					<p class="textBox_title">
+					<p class="textBox_title" style="margin-bottom: 10px">
 						{{info.title}}
 					</p>
 					<p class="textBox_content">
