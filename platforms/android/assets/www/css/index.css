@@ -51,20 +51,26 @@ html {
 	display: inline-block;
 	text-align: center;
 	text-shadow: none;
+
 }
 
-.title, .back, .shenkar_logo {
+.title,  .shenkar_logo {
 	height: 40px;
 	display: inline-block;
 	position: relative;
 }
 
+
+
 .title {
 	float: right;
 	width: 95%;
+	margin-left: -18px;
+
 }
 .container a {
 	overflow: hidden;
+	
 }
 .hebrew {
 	font-size: 18px;
@@ -75,9 +81,10 @@ html {
 
 .back {
 	width: 5%;
-	float: left;
+	float: right;
 	line-height: 39px;
 	text-align: left;
+	display: inline;
 }
 
 .shenkar_logo {
@@ -88,6 +95,7 @@ html {
 	/*max-width:22px;*/
 	top: 10px;
 	text-shadow: none;
+	margin-right: 18px;
 }
 
 .sidar_logo {

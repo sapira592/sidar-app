@@ -49,10 +49,10 @@
 				</div> </a>
 			</div>
 			<div ng-if="state!=0 && state!=1 && state!=2 && state!=4 && state!=3" class="content four_columns">
-				<a ng-repeat="work in globalWorks" ng-click="getWotkFromGlobalWork($index)"> 
-					<div  class="contentImg" style="background-image: url('{{work.url}}')">
-
-				</div> </a>
+				<a ng-repeat="work in globalWorks track by $index" ng-click="getWorkFromGlobalWorks($index)">
+				<!-- <div  class="contentImg" style="background-image: url('{{work.url}}')"> -->
+				<div class="contentImg" style="background-image: url('{{work.newImage}}')"> </div>
+			</a>
 			</div>
 
 		</div>

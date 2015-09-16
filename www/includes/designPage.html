@@ -63,10 +63,9 @@
 
 
 		<div class="content four_columns">
-			<a ng-repeat="work in globalWorks" ng-click="getWorkFromGlobalWorks($index)">
-				<div  class="contentImg" style="background-image: url('{{work.url}}')">
-					
-				</div>
+			<a ng-repeat="work in globalWorks track by $index" ng-click="getWorkFromGlobalWorks($index)">
+				<!-- <div  class="contentImg" style="background-image: url('{{work.url}}')"> -->
+				<div class="contentImg" style="background-image: url('{{work.newImage}}')"> </div>
 			</a>
 		</div>
 

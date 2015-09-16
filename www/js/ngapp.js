@@ -59,7 +59,7 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
 	 
 	$rootScope.app = {
 		name : 'Sidar',
-		domain : ''
+		domain :  (document.domain == 'localhost')?'http://localhost/opensolar/sidarMobileApp.php':'http://192.116.128.64/newsite/sidarMobileApp.php/'
 	};
 
 	$.getJSON("json/data.json", function(data) {
@@ -125,39 +125,32 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 		path : '#/'
 	}];
 	
-	if (!$rootScope.globalWorks)
-		$http.get('json/images.json')
-	    .success(function(data, status, headers, config) {
-	      $rootScope.globalWorks = data;
-	    }).
-	    error(function(data, status, headers, config) {
-	      // log error
-	    });
+	// if (!$rootScope.globalWorks)
+		// $http.get('json/images.json')
+	    // .success(function(data, status, headers, config) {
+	      // $rootScope.globalWorks = data;
+	    // }).
+	    // error(function(data, status, headers, config) {
+	      // // log error
+	    // });
 	    
 	    //plugin add https://github.com/apache/cordova-plugin-whitelist.git
-	    // <allow-navigation href="*" />
-	    
-	    $.ajax({
-	    	url:'http://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*A*&wt=json',
-	    	method:"get",
-	    	crossDomain: true,
-	    	dataType: "jsonp",
-	    	// ContentType:'text/plain; charset=utf-8',
-            // jsonpCallback: "",
-	    	success:function(data){
-	    		console.log('success',data);
-	    	},
-	    	error:function(err){
-	    		console.log('error',err);
-	    	}
-	    });
-		// $http.get("https://ec2-la-usa.opensolr.com/solr/Shenkar/select?q=*A*&wt=json")
-	      // .success(function(data){
-	        	// console.log(data);
-	      // })
-		 // .error(function(err){
-		 	// console.log(err);
-		 // });
+		if (!$rootScope.globalWorks)
+			$http.get($rootScope.app.domain+ '?func=getIndexImages')
+		      .success(function(res){
+		        	var arr = JSON.parse(res.data).response.docs;
+		        	arr.forEach(function(val,key){
+		        		if (val.bs_has_image){
+							val.newImage = val.sm_field_image[1].replace("'medium':","");
+						}
+						else val.newImage = 'http://online.shenkar.ac.il/moodle/file.php?file=%2F1%2Flogoshadow1.gif'; 
+		        	});
+		        	console.log('data',arr);
+		        	$rootScope.globalWorks = arr;
+		      })
+			 .error(function(err){
+			 	console.log('error',err);
+			 });
 		
 	$rootScope.getWorkFromGlobalWorks = function($index){
 		console.log($rootScope.globalWorks[$index]);

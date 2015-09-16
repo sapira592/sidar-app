@@ -17,11 +17,9 @@
 
 	<div data-role="content" class="ui-content" id="content">
 		<div class="content four_columns">
-			<a ng-repeat="work in globalWorks" ng-click="getWorkFromGlobalWorks($index)">
-				<div  class="contentImg" style="background-image: url('{{work.url}}')">
-				<!-- <div  class="contentImg" style="background-image: url('{{work.sm_field_image.medium}}')"> -->
-					
-				</div>
+			<a ng-repeat="work in globalWorks track by $index" ng-click="getWorkFromGlobalWorks($index)">
+				<!-- <div  class="contentImg" style="background-image: url('{{work.url}}')"> -->
+				<div class="contentImg" style="background-image: url('{{work.newImage}}')"> </div>
 			</a>
 		</div>
 	</div>
