@@ -240,3 +240,6 @@ article{
 	margin-right: 22px;
 }
 
+.redBorder{
+	border: 1px solid red;
+}

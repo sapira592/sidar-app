@@ -68,24 +68,34 @@ app.run(function($rootScope, $window, $http, $localStorage, $location) {
 		$rootScope.data = data;
 	});
 
-	$rootScope.categories = {
-		F : {
-			color : "red",
-			name : "אופנה"
-		},
-		G : {
-			color : "blue",
-			name : "גרפיקה"
-		},
-		I : {
-			color : "yellow",
-			name : "תעשייתי"
-		},
-		J : {
-			color : "black",
-			name : "תכשיטים"
+	
+	$rootScope.getClassColor = function(work){
+		if (work.content.indexOf('Visual Communication')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Visual Communication";
+			return "#ADD8E6";
 		}
+		else if (work.content.indexOf('Fashion Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Fashion Design";
+			return "#026CB9";
+		}
+		if (work.content.indexOf('Jewelry Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Jewelry Design";
+			return "#FC513F";
+		}
+		if (work.content.indexOf('Industrial Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Industrial Design";
+			return "#FCA649";
+		}
+		else {
+			work.color="black";
+			"black";
+		} 
 	};
+	
 	document.addEventListener("deviceready", function(){
         window.confirm = function ( message ,confirmDismissed ){
         	navigator.notification.confirm(
@@ -142,6 +152,7 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 		      .success(function(res){
 		        	var arr = JSON.parse(res.data).response.docs;
 		        	arr.forEach(function(val,key){
+		        		// console.log(val.content);
 		        		if (val.bs_has_image){
 							val.newImage = val.sm_field_image[1].replace("'medium':","");
 						}
@@ -156,7 +167,13 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 		
 	$rootScope.getWorkFromGlobalWorks = function($index){
 		console.log($rootScope.globalWorks[$index]);
-		$rootScope.currWork = $rootScope.globalWorks[$index];
+		// $rootScope.currWork = $rootScope.globalWorks[$index];
+		// $location.url('/work');
+	};
+	
+	$rootScope.displayWorkData = function (work){
+		console.log(work);
+		$rootScope.currWork = work;
 		$location.url('/work');
 	};
 	
@@ -464,6 +481,37 @@ app.controller('designPageCtrl', function($scope, $rootScope, $http) {
 		
 	};
 	
+	$scope.getWorkFromDesignWork = function(work){
+		$rootScope.$broadcast('displayWorkBroad',work);
+	};
+	
+	$scope.getClassColor= function(work){
+		if (work.bundle_name.indexOf('Visual Communication')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Visual Communication";
+			return "#ADD8E6";
+		}
+		else if (work.bundle_name.indexOf('Fashion Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Fashion Design";
+			return "#026CB9";
+		}
+		if (work.bundle_name.indexOf('Jewelry Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Jewelry Design";
+			return "#FC513F";
+		}
+		if (work.bundle_name.indexOf('Jewelry Design')!= -1){
+			work.color="#ADD8E6";
+			work.bundle="Jewelry Design";
+			return "#FCA649";
+		}
+		else {
+			work.color="black";
+			"black";
+		} 
+	};
+	
 	// get the data from "design.json", and using the information in "designPage.html"
 	
 	
@@ -510,8 +558,8 @@ app.controller('workCtrl', function($scope, $rootScope, $http) {
 	$scope.state;
 	
 	$scope.navigation = [{
-		name : 'דיסיפלינה',
-		path : '#/work'
+		name : $rootScope.currWork.bundle,
+		path : '#/designPage'
 	}, {
 		name : 'חיפוש',
 		path : '#/work'

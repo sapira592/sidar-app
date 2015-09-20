@@ -18,6 +18,8 @@ function initPageCss() {
 	$('.contentImg').css('height', imageWidth + "px");
 }
 
+
+
 function preventDefault(e) {
   e = e || window.event;
   if (e.preventDefault)

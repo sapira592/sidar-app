@@ -9,15 +9,12 @@
 		</div>
 
 		<div class="navigation">
-			<a ng-repeat="nav in navigation" href="{{nav.path}}" ng-click="changeState($index,nav.cat)" class="nav">{{nav.name}}
-				<span ng-if="{{nav.cat}} == 'tex'" ng-click="false"></span>
-				
-				</a>
+			<a ng-repeat="nav in navigation" href="{{nav.path}}" ng-click="changeState($index,nav.cat)" class="nav">{{nav.name}}</a>
 			
 		</div>
 	</header>
 
-
+  
 <div data-role="content" class="ui-content" id="content">
 		<div class="content one_columns">
 			
@@ -67,9 +64,9 @@
 
 
 		<div class="content four_columns">
-			<a ng-repeat="work in designImages || globalWorks track by $index" ng-click="getWorkFromDesignWork($index)">
+			<a ng-repeat="work in designImages || globalWorks track by $index" ng-click="displayWorkData(work)">
 				<!-- <div  class="contentImg" style="background-image: url('{{work.url}}')"> -->
-				<div class="contentImg" style="background-image: url('{{work.newImage}}')"> </div>
+				<div class="contentImg" style="background-image: url('{{work.newImage}}'); border:1px solid {{getClassColor(work)}}"> </div>
 			</a>
 		</div>
 

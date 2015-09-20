@@ -16,7 +16,7 @@
 	
 	<div data-role="content" class="ui-content" id="content">
 		<div class="content four_columns">
-			<div ng-repeat="exh in currExh.images" class="contentImg" style="background-image: url('{{exh.url}}')">
+			<div ng-repeat="exh in currExh.images" class="contentImg" style="background-image: url('{{exh.url}}'); border:1px solid {{getClassColor(work)}} ">
 
 			</div>
 		</div>
