@@ -427,10 +427,12 @@ app.controller('designPageCtrl', function($scope, $rootScope, $http) {
 		cat: "Industrial"
 	}, {
 		name : 'עיצוב טקסטיל',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat: "tex"
 	}, {
 		name : 'חיפוש',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat: "tex"
 	}];
 	
 	$scope.changeState = function($index,name){
@@ -441,6 +443,9 @@ app.controller('designPageCtrl', function($scope, $rootScope, $http) {
 		
 		$http.get($rootScope.app.domain+ '?func=get'+name+'Images')
 	      .success(function(res){
+	      	if (!res.status){
+	      		return;
+	      	}
 	        	var arr = JSON.parse(res.data).response.docs;
 	        	arr.forEach(function(val,key){
 	        		if (val.bs_has_image){
