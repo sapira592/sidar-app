@@ -8,8 +8,9 @@ function initPageCss() {
 		var container = $(page + ' .container').height();
 		var nav = $(page + ' .navigation').height();
 
-		$('[data-role=header]').css('height', container + nav + "px !important");
-		$("[data-role=content]").css("height", window.innerHeight - $('[data-role=header]').height() + "px");
+		// $('[data-role=header]').css('height', container + nav + "px !important");
+		$("[data-role=content]").css("top", $('[data-role=header]').height() + "px");
+		// $("[data-role=content]").css("top", $('[data-role=header]').height() + "px");
 
 	});
 
