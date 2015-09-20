@@ -9,6 +9,8 @@ app.config(function($locationProvider, $routeProvider,$compileProvider) {
     //$compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);
     //$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
 	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file):/);
+
+// define each "html" (by url) page his own controller
 	
 	$routeProvider
       .when('/', {
@@ -134,7 +136,7 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 	      // // log error
 	    // });
 	    
-	    //plugin add https://github.com/apache/cordova-plugin-whitelist.git
+ //plugin add https://github.com/apache/cordova-plugin-whitelist.git
 		if (!$rootScope.globalWorks)
 			$http.get($rootScope.app.domain+ '?func=getIndexImages')
 		      .success(function(res){
@@ -164,6 +166,8 @@ app.controller('indexCtrl', function($scope, $rootScope, $http, $location) {
 /**********************************************************************
  * About controller
  **********************************************************************/
+
+// In AngularJS, $scope is the application object (the owner of application variables and functions). 
 app.controller('aboutCtrl', function($scope, $rootScope, $http) {
 	
 	if (!$scope.data)
@@ -403,20 +407,24 @@ app.controller('theoreticalsCtrl', function($scope, $rootScope, $http) {
  * DesignPage controller
  **********************************************************************/
 app.controller('designPageCtrl', function($scope, $rootScope, $http) {
-	$scope.state;
+	// $scope.state;
 	
 	$scope.navigation = [{
 		name : 'עיצוב אופנה',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat:"Fashion"
 	}, {
 		name : 'תקשורת חזותית',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat: "Visual"
 	}, {
 		name : 'עיצוב תכשיטים',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat:"Jewelry"
 	}, {
 		name : 'עיצוב תעשייתי',
-		path : '#/designPage'
+		path : '#/designPage',
+		cat: "Industrial"
 	}, {
 		name : 'עיצוב טקסטיל',
 		path : '#/designPage'
@@ -425,21 +433,46 @@ app.controller('designPageCtrl', function($scope, $rootScope, $http) {
 		path : '#/designPage'
 	}];
 	
-	$scope.changeState = function($index){
+	$scope.changeState = function($index,name){
 		if ( $scope.state == $index )
 			$scope.state = -1;
 		else $scope.state = $index;
+
 		
-		$http.get('json/design.json').
-			    success(function(data, status, headers, config) {
-			      $rootScope.design = data;
-			    }).
-			    error(function(data, status, headers, config) {
-			      // log error
-			    });
+		$http.get($rootScope.app.domain+ '?func=get'+name+'Images')
+	      .success(function(res){
+	        	var arr = JSON.parse(res.data).response.docs;
+	        	arr.forEach(function(val,key){
+	        		if (val.bs_has_image){
+						val.newImage = val.sm_field_image[1].replace("'medium':","");
+					}
+					else val.newImage = 'http://online.shenkar.ac.il/moodle/file.php?file=%2F1%2Flogoshadow1.gif'; 
+	        	});
+	        	console.log('data',arr);
+	        	$scope.designImages = arr;
+	        		
+	      })
+		 .error(function(err){
+		 	console.log('error',err);
+		 });
+		
+		
 	};
-		
-		
+	
+	// get the data from "design.json", and using the information in "designPage.html"
+	
+	
+	$scope.init = function(){
+		$http.get('json/design.json').
+	    success(function(data, status, headers, config) {
+	      $rootScope.design = data;
+	    }).
+	    error(function(data, status, headers, config) {
+	      // log error
+	    });	
+	};
+	$scope.init();
+	
 	initPageCss();
 });
 

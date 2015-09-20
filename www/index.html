@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- The ng-app directive will auto-bootstrap (automatically initialize) the application when a web page is loaded.-->
+<!-- The ng-app directive defines an AngularJS application. -->
+<!-- The ng-model directive defines an variable. -->
 <html ng-app="sidarApp">
 	<head>
 		<meta charset="utf-8" />
@@ -25,7 +28,7 @@
 
 		<ng-view ui-view="content" autoscroll="false"> </ng-view>
 
-
+		<!-- Connecting to the ng function & defentions. start the app. -->
 		<script type="text/javascript" src="js/ngapp.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
 	</body>
